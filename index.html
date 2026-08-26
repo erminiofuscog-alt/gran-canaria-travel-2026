@@ -346,7 +346,7 @@ footer{text-align:center;color:#7b847f;font-size:11px;margin-top:24px}
     </div>
   </section>
 
-  <footer>Gran Canaria Travel Dashboard · 5—12 settembre 2026 · Dati di itinerario provenienti dalla guida personale verificata il 25 agosto 2026.</footer>
+  <footer>Gran Canaria Travel Dashboard · V4 · 5—12 settembre 2026 · Dati di itinerario provenienti dalla guida personale verificata il 25 agosto 2026.</footer>
 </div>
 
 <nav class="nav" aria-label="Navigazione">
@@ -690,5 +690,20 @@ document.getElementById("shareBtn").addEventListener("click",async()=>{
 
 renderDays();renderQuickPlaces();renderChecks();renderMustSee();renderFood();renderPersistentChecks("tripChecks",tripCheckItems,"gc26_trip_checks");renderPersistentChecks("returnChecks",returnCheckItems,"gc26_return_checks");updateCountdown();setInterval(updateCountdown,60000);loadWeather();updateApiHelp();loadGoogleMaps();
 </script>
+
+<script>
+(function(){
+  const originalAlert = window.alert;
+  window.__GC26_DIAGNOSTICS__ = {
+    mapsKeyPresent: !!localStorage.getItem('gc26_maps_key'),
+    https: location.protocol === 'https:',
+    entryFile: location.pathname.endsWith('/index.html') || location.pathname.endsWith('/')
+  };
+  window.addEventListener('error', function(e){
+    console.error('[GC26]', e.message, e.filename, e.lineno);
+  });
+})();
+</script>
+
 </body>
 </html>
