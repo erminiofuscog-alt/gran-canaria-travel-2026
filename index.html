@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f6f2eb">
-<meta name="description" content="Gran Canaria 2026 — dashboard di viaggio personale per Erminio & Gineth.">
-<title>Gran Canaria 2026 · Travel Dashboard</title>
+<meta name="description" content="Gran Canaria 2026 — dashboard di viaggio personale V2 per Erminio & Gineth.">
+<title>Gran Canaria 2026 · Travel Dashboard V2</title>
 <style>
 :root{
   --bg:#f6f2eb;--surface:#fffdf9;--surface2:#f0ebe2;--ink:#1d2623;--muted:#69736d;
@@ -101,7 +101,7 @@ input:focus,select:focus{border-color:#9dbbb0;box-shadow:0 0 0 3px #dfeae5}
 .settings{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .status{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800}.dot{width:9px;height:9px;border-radius:50%;background:#a9b1ad}.dot.ok{background:#3b8c69}.dot.warn{background:#c28c3e}.dot.bad{background:#b84f49}
 .smallText{font-size:11px;color:var(--muted);line-height:1.5}
-.nav{position:fixed;left:50%;bottom:13px;transform:translateX(-50%);z-index:30;display:flex;gap:4px;padding:6px;border:1px solid rgba(214,208,198,.95);background:rgba(255,253,249,.88);backdrop-filter:blur(18px);border-radius:19px;box-shadow:0 14px 45px rgba(36,44,40,.18)}
+.nav{max-width:calc(100% - 16px);overflow-x:auto;position:fixed;left:50%;bottom:13px;transform:translateX(-50%);z-index:30;display:flex;gap:4px;padding:6px;border:1px solid rgba(214,208,198,.95);background:rgba(255,253,249,.88);backdrop-filter:blur(18px);border-radius:19px;box-shadow:0 14px 45px rgba(36,44,40,.18)}
 .nav button{border:0;background:transparent;color:#68726d;border-radius:13px;padding:10px 12px;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}
 .nav button.active{background:#e7f0eb;color:var(--green)}
 .modal{position:fixed;inset:0;background:rgba(21,29,25,.52);backdrop-filter:blur(8px);display:none;align-items:flex-end;justify-content:center;z-index:50}
@@ -123,6 +123,19 @@ footer{text-align:center;color:#7b847f;font-size:11px;margin-top:24px}
  .nav{max-width:calc(100% - 16px);width:calc(100% - 16px);justify-content:space-around}.nav button{padding:10px 7px;font-size:10px}
  .topbar .softBtn span{display:none}
 }
+
+/* V2 upgrades */
+.tripStatus{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}
+.countdown{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.countBox{min-width:78px;padding:12px 13px;border:1px solid var(--line);border-radius:16px;background:var(--surface2)}.countBox b{display:block;font-size:22px}.countBox span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.nextCard{padding:18px;border-radius:22px;background:linear-gradient(135deg,#245b4d,#347765);color:white;box-shadow:0 14px 35px rgba(36,91,77,.18)}.nextCard .kicker{color:#dcebe5}.nextCard h2{margin:7px 0;font-size:26px;letter-spacing:-.03em}.nextCard p{margin:0;color:#eaf3ef;line-height:1.5;font-size:13px}
+.dayHero{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;margin:14px 0}.dayIntro{padding:18px;border:1px solid var(--line);border-radius:20px;background:var(--surface2)}.dayIntro h3{font-size:25px;margin:5px 0 6px;letter-spacing:-.03em}.dayIntro p{margin:0;color:var(--muted);line-height:1.5}.dayBadges{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.dayBadge{padding:7px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:11px;font-weight:800}.priority{padding:18px;border-radius:20px;background:#fbefee;border:1px solid #eed2cf}.priority b{display:block;color:#7d3d39;margin-bottom:5px}.priority p{margin:0;font-size:12px;line-height:1.5;color:#7d3d39}
+.dayExtras{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.extraCard{padding:15px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.extraCard h4{margin:0 0 7px;font-size:13px}.extraCard p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.quickLinks{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.quickLink{padding:13px;border:1px solid var(--line);border-radius:16px;background:var(--surface);cursor:pointer;text-align:left}.quickLink b{display:block;font-size:13px}.quickLink span{display:block;margin-top:4px;color:var(--muted);font-size:11px}
+.foodGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.foodCard{padding:16px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.foodCard h3{margin:0 0 5px}.foodCard p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}.price{font-weight:850;color:var(--green);font-size:12px;margin-top:8px}
+.budget{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.budgetRow{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.budgetRow:last-child{border-bottom:0}.budgetTotal{padding:14px;border-radius:16px;background:#edf3ef;font-size:15px;font-weight:850;color:var(--green)}
+.weatherGrid{display:grid;grid-template-columns:repeat(8,1fr);gap:7px;overflow:auto}.weatherDay{min-width:105px;padding:12px;border:1px solid var(--line);border-radius:16px;background:var(--surface);text-align:center}.weatherDay b{display:block;font-size:12px}.weatherIcon{font-size:24px;margin:8px 0}.weatherTemp{font-weight:850}.weatherDesc{font-size:10px;color:var(--muted);margin-top:4px;min-height:28px}.weatherStatus{font-size:11px;color:var(--muted);margin-top:10px}
+@media(max-width:900px){.tripStatus,.dayHero{grid-template-columns:1fr}.dayExtras{grid-template-columns:1fr 1fr}.quickLinks{grid-template-columns:1fr 1fr}.weatherGrid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:620px){.dayExtras,.foodGrid{grid-template-columns:1fr}.quickLinks{grid-template-columns:1fr 1fr}.weatherGrid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -292,6 +305,47 @@ footer{text-align:center;color:#7b847f;font-size:11px;margin-top:24px}
     </div>
   </section>
 
+  <section id="luoghi" class="panel" style="display:none">
+    <div class="card pad">
+      <div class="sectionHead"><div><div class="kicker">Imperdibili</div><h2>Cosa vedere — selezione ragionata</h2></div><span class="pill" style="background:#edf3ef;color:var(--green);border-color:#d7e4dc">NON UNA LISTA INFINITA</span></div>
+      <div class="placeGrid" id="mustSeeGrid"></div>
+    </div>
+    <div class="section grid">
+      <div class="card pad"><div class="sectionHead"><div><div class="kicker">Regola</div><h2>Se siete stanchi</h2></div></div><div class="notice important"><b>Meglio vivere bene 3 luoghi che correre per 7.</b><br>Da non tagliare: Fiesta del Pino, Dune, Pico/Roque, Barranco presto e Mirador del Balcón. Tagliabili: Salinas de Tenefé, beach club, musei lunghi e shopping.</div></div>
+      <div class="card pad"><div class="sectionHead"><div><div class="kicker">Scelta rapida</div><h2>Il meglio per tipo</h2></div></div><div class="guideGrid"><div class="guideItem"><h3>🏖️ Mare</h3><p>Anfi del Mar + Puerto de Mogán.</p></div><div class="guideItem"><h3>🏔️ Montagna</h3><p>Pico de las Nieves + Roque Nublo + Tejeda.</p></div><div class="guideItem"><h3>🌅 Tramonto</h3><p>Dune di Maspalomas e Las Canteras.</p></div><div class="guideItem"><h3>🎉 Cultura</h3><p>Teror e Fiesta del Pino.</p></div></div></div>
+    </div>
+  </section>
+
+  <section id="mangiare" class="panel" style="display:none">
+    <div class="card pad"><div class="sectionHead"><div><div class="kicker">Tavola canaria</div><h2>Mangiare — senza perdere tempo</h2></div></div>
+      <div class="foodGrid" id="foodGrid"></div>
+    </div>
+    <div class="section grid">
+      <div class="card pad"><div class="sectionHead"><div><div class="kicker">10 rituali</div><h2>Da assaggiare</h2></div></div><div class="guideGrid"><div class="guideItem"><h3>🥔 Papas arrugadas</h3><p>Con mojo picón o verde.</p></div><div class="guideItem"><h3>🌾 Gofio</h3><p>Cercarlo in un ristorante canario.</p></div><div class="guideItem"><h3>🍯 Bienmesabe</h3><p>10/09 a Tejeda, Dulcería Nublo.</p></div><div class="guideItem"><h3>🐟 Pesce del giorno</h3><p>Agaete/Puerto de las Nieves o Puerto de Mogán.</p></div></div></div>
+      <div class="card pad"><div class="sectionHead"><div><div class="kicker">Ristoranti già selezionati</div><h2>Dal vostro Libro d'Oro</h2></div></div><div class="notice">El Rinconcito Andaluz · Bar San Fermín · La Cofradía de Pescadores · Dulcería Nublo · Restaurante Angor.<br><br><b>Nota:</b> orari e disponibilità vanno ricontrollati il giorno stesso.</div></div>
+    </div>
+  </section>
+
+  <section id="meteo" class="panel" style="display:none">
+    <div class="card pad"><div class="sectionHead"><div><div class="kicker">Previsione</div><h2>Meteo del viaggio</h2></div><span id="weatherStatus" class="status"><i class="dot warn"></i> Caricamento…</span></div>
+      <div id="weatherGrid" class="weatherGrid"></div><div class="weatherStatus">La previsione viene richiesta online senza usare la tua API Google. Se il servizio non è disponibile, restano visibili i valori climatologici della home.</div>
+    </div>
+  </section>
+
+  <section id="checklist" class="panel" style="display:none">
+    <div class="grid">
+      <div class="card pad"><div class="sectionHead"><div><div class="kicker">Prima di partire</div><h2>Checklist viaggio</h2></div></div><div id="tripChecks" class="checklist"></div></div>
+      <div class="card pad"><div class="sectionHead"><div><div class="kicker">Fine viaggio</div><h2>Riconsegna auto</h2></div></div><div id="returnChecks" class="checklist"></div></div>
+    </div>
+  </section>
+
+  <section id="budget" class="panel" style="display:none">
+    <div class="card pad"><div class="sectionHead"><div><div class="kicker">Controllo spesa</div><h2>Budget già quantificato</h2></div><span class="pill" style="background:#edf3ef;color:var(--green);border-color:#d7e4dc">BASE</span></div>
+      <div class="budget"><div><div class="budgetRow"><span>Voli A/R · 2 persone</span><b>€416</b></div><div class="budgetRow"><span>Appartamento</span><b>€570</b></div><div class="budgetRow"><span>Noleggio auto</span><b>~€92</b></div><div class="budgetRow"><span>Parcheggio Fiumicino</span><b>€49,99</b></div></div><div class="budgetTotal">Totale base<br>€1.127,99</div></div>
+      <div class="notice" style="margin-top:14px">Fuori dal totale: benzina, pasti, parcheggi, eventuali ingressi e shopping. Arehucas €10/persona; Maroa da €35/persona; Perchel circa €100–130 per due per alcune postazioni.</div>
+    </div>
+  </section>
+
   <footer>Gran Canaria Travel Dashboard · 5—12 settembre 2026 · Dati di itinerario provenienti dalla guida personale verificata il 25 agosto 2026.</footer>
 </div>
 
@@ -299,14 +353,19 @@ footer{text-align:center;color:#7b847f;font-size:11px;margin-top:24px}
   <button class="active" data-section="home" onclick="showSection('home',this)">⌂ Home</button>
   <button data-section="itinerario" onclick="showSection('itinerario',this)">📅 Giorni</button>
   <button data-section="mappa" onclick="showSection('mappa',this)">🗺️ Mappa</button>
+  <button data-section="luoghi" onclick="showSection('luoghi',this)">🏝️ Luoghi</button>
+  <button data-section="mangiare" onclick="showSection('mangiare',this)">🍴 Mangiare</button>
+  <button data-section="meteo" onclick="showSection('meteo',this)">☀️ Meteo</button>
   <button data-section="logistica" onclick="showSection('logistica',this)">✈️ Logistica</button>
+  <button data-section="checklist" onclick="showSection('checklist',this)">🎒 Lista</button>
+  <button data-section="budget" onclick="showSection('budget',this)">💶 Budget</button>
   <button data-section="guida" onclick="showSection('guida',this)">⭐ Guida</button>
 </nav>
 
 <div id="settingsModal" class="modal" onclick="if(event.target===this)closeSettings()">
   <div class="modalBox">
     <div class="modalHead"><h2>Google Maps · configurazione</h2><button class="iconBtn" onclick="closeSettings()">✕</button></div>
-    <p class="muted" style="line-height:1.5">Inserisci la tua API key. Viene salvata <b>solo su questo dispositivo</b> nel browser. Per una chiave con restrizione “Siti web”, la dashboard deve essere pubblicata su un indirizzo HTTP/HTTPS autorizzato; un file <code>content://</code> o <code>file://</code> può far fallire l'autorizzazione del referrer.</p>
+    <p class="muted" style="line-height:1.5">La dashboard usa la stessa chiave Google Maps già configurata. Se non viene trovata su questo dispositivo, inseriscila qui: viene salvata <b>solo su questo dispositivo</b> nel browser. Per una chiave con restrizione “Siti web”, la dashboard deve essere pubblicata su un indirizzo HTTP/HTTPS autorizzato; un file <code>content://</code> o <code>file://</code> può far fallire l'autorizzazione del referrer.</p>
     <label class="kicker" for="apiKeyInput">API KEY</label>
     <input id="apiKeyInput" type="password" placeholder="AIza..." autocomplete="off" style="margin-top:7px">
     <div class="btnRow"><button class="btn" onclick="saveApiKey()">Collega e carica Maps</button><button class="btn secondary" onclick="clearApiKey()">Cancella chiave</button></div>
@@ -412,6 +471,17 @@ function showSection(id,btn){
  if(id==="mappa" && googleReady && !map) initGoogleMap();
 }
 
+const dayMeta=[
+ {type:"Arrivo",badges:["🚗 Auto 10:00","🌅 Golden hour","🧳 Giornata leggera"],priority:"Non caricare il primo giorno: l'obiettivo è arrivare, sistemarsi e vedere le dune con calma.",why:"Apertura del viaggio morbida, con Maspalomas come primo contatto con l'isola.",planB:"Se siete stanchi, saltate la passeggiata lunga e tenete solo Faro + tramonto.",pack:"Costume, acqua, telefono carico e scarpe comode."},
+ {type:"Mare + relax",badges:["🏖️ Anfi","⚓ Mogán","🐟 Pesce"],priority:"Se Anfi è affollata o il parcheggio è scomodo, spostatevi senza perdere tempo verso Puerto de Mogán.",why:"È la giornata mare più rilassata e gastronomica del viaggio.",planB:"Puerto de Mogán può diventare da solo il cuore della giornata.",pack:"Costume, telo, crema, occhiali e acqua."},
+ {type:"Festa",badges:["🥃 Arehucas 09:30","🚌 Global","🎉 Romería 15:30"],priority:"Arehucas va fatta il 7: l'8 settembre 2026 è chiusa. Per Teror usate il dispositivo speciale Global.",why:"Unisce cultura, distilleria, Arucas, Vegueta e la grande Romería del Pino.",planB:"Se siete stanchi, tagliate parte di Vegueta/Triana, non la Romería.",pack:"Acqua, powerbank, scarpe comode, zaino piccolo."},
+ {type:"Fiesta del Pino",badges:["⛪ Messa 12:00","🌸 Processione 13:00","🎵 Concerto 21:00"],priority:"Non tentate di arrivare in auto a Teror. Restate nel paese tra pomeriggio e concerto.",why:"È il giorno patronale: Messa, processione e atmosfera sono il motivo della giornata.",planB:"Se la notte precedente pesa, saltate il concerto ma non Messa e processione.",pack:"Acqua, cappellino, powerbank, scarpe comode e contanti/carta."},
+ {type:"Natura + mare",badges:["🥾 08:15 Barranco","🏘️ Agüimes","🏖️ Amadores"],priority:"Barranco de las Vacas presto e senza parcheggiare sulla carreggiata.",why:"È il mix più equilibrato tra geologia, villaggi, case-grotta e bagno finale.",planB:"Se il mattino slitta, riducete Agüimes e proteggete Guayadeque + Amadores.",pack:"Scarpe, acqua, crema, costume e snack."},
+ {type:"Montagna",badges:["🌄 Pico","🎟️ Roque QR","🍯 Tejeda"],priority:"Roque Nublo: slot, QR, parcheggio e navetta vanno ricontrollati prima della partenza.",why:"È il cuore vulcanico dell'isola e una delle giornate più importanti.",planB:"Se non c'è uno slot utile, niente improvvisazioni: Pico + Cruz de Tejeda + Tejeda.",pack:"Scarpe chiuse, acqua, cappellino, crema e felpa/giacca."},
+ {type:"Costa selvaggia",badges:["🌊 Agaete","🗻 Mirador","🌅 Las Canteras"],priority:"Non usare il vecchio tracciato chiuso della GC-200. Mirador dalla viabilità aperta e poi ritorno.",why:"È la giornata panoramica più spettacolare, ma anche la più impegnativa al volante.",planB:"Se siete stanchi, eliminate Las Canteras oppure riducete la sosta, non forzate il rientro.",pack:"Acqua, crema, snack, telefono carico e giacca leggera."},
+ {type:"Partenza",badges:["🏖️ Dune se possibile","🚗 Auto 09:00","✈️ LPA"],priority:"Il volo non è presente nel materiale recuperato: 09:00 di riconsegna va verificato contro check-in e sicurezza.",why:"Ultimo rito senza mettere a rischio l'aeroporto.",planB:"Se il volo è presto, saltate completamente le dune e andate direttamente a LPA.",pack:"Voucher, carta di credito, documenti, ricevuta carburante e telefono."}
+];
+
 function renderDays(){
  const wrap=document.getElementById("days");
  wrap.innerHTML="";
@@ -426,10 +496,13 @@ function renderDays(){
 function renderDay(i){
  const d=itinerary[i], c=document.getElementById("dayContent");
  document.getElementById("routeTitle").textContent=d.date+" · "+d.origin+" → "+d.destination;
- c.innerHTML="<h3 style='margin:4px 0'>"+d.title+"</h3><p class='muted'>"+d.subtitle+"</p>"+
+ const meta=dayMeta[i]||{};
+ c.innerHTML="<div class='dayHero'><div class='dayIntro'><div class='kicker'>"+d.date+" · "+(meta.type||"Giornata")+"</div><h3>"+d.title+"</h3><p>"+d.subtitle+"</p><div class='dayBadges'>"+((meta.badges||[]).map(x=>"<span class='dayBadge'>"+x+"</span>").join(""))+"</div></div><div class='priority'><b>⚠️ Punto chiave</b><p>"+(meta.priority||"Seguite l'ordine della giornata e usate Google Maps live per gli spostamenti.")+"</p></div></div>"+
  d.stops.map((s,j)=>"<div class='stop'><div class='time'>"+s[0]+"</div><div><h3>"+s[1]+"</h3><p>"+s[2]+"</p></div>"+
- "<a class='btn secondary small' target='_blank' rel='noopener' href='"+mapsDir(s[1], j<d.stops.length-1?d.stops[j+1][1]:d.title)+"'>↗ Maps</a></div>").join("");
+ "<a class='btn secondary small' target='_blank' rel='noopener' href='"+mapsDir(s[1], j<d.stops.length-1?d.stops[j+1][1]:d.title)+"'>↗ Maps</a></div>").join("")+
+ "<div class='dayExtras'><div class='extraCard'><h4>🎯 Perché questa giornata</h4><p>"+(meta.why||"Giornata costruita per valorizzare il percorso senza aggiungere tappe inutili.")+"</p></div><div class='extraCard'><h4>🅱️ Piano B</h4><p>"+(meta.planB||"Se siete in ritardo, saltate la tappa meno importante e non recuperate correndo la sera.")+"</p></div><div class='extraCard'><h4>🎒 Da avere</h4><p>"+(meta.pack||"Acqua, telefono carico, powerbank, documento e scarpe comode.")+"</p></div></div>";
 }
+
 function mapsDir(origin,destination){
  return "https://www.google.com/maps/dir/?api=1&origin="+encodeURIComponent(origin)+ "&destination="+encodeURIComponent(destination)+"&travelmode=driving";
 }
@@ -444,6 +517,33 @@ function renderChecks(){
  document.getElementById("carChecks").innerHTML=items.map((x,i)=>"<label class='check "+(saved[i]?"done":"")+"'><input type='checkbox' "+(saved[i]?"checked":"")+" onchange='toggleCheck("+i+",this)'><span>"+x+"</span></label>").join("");
 }
 function toggleCheck(i,el){let a=JSON.parse(localStorage.getItem("gc26_checks")||"{}");a[i]=el.checked;localStorage.setItem("gc26_checks",JSON.stringify(a));el.parentElement.classList.toggle("done",el.checked)}
+
+const mustSee=[
+ ["Dune di Maspalomas","Tramonto · ⭐⭐⭐⭐⭐","5/09 o 12/09 · 60—90 min","Maspalomas, Gran Canaria"],
+ ["Anfi del Mar","Mare · ⭐⭐⭐⭐⭐","6/09 · mezza giornata","Anfi del Mar, Gran Canaria"],
+ ["Puerto de Mogán","Porto · ⭐⭐⭐⭐⭐","6/09 · 2—3 h","Puerto de Mogán, Gran Canaria"],
+ ["Fiesta del Pino","Cultura · ⭐⭐⭐⭐⭐","7—8/09 · giornata evento","Teror, Gran Canaria"],
+ ["Barranco de las Vacas","Natura · ⭐⭐⭐⭐⭐","9/09 · 60 min","Barranco de las Vacas, Gran Canaria"],
+ ["Roque Nublo","Montagna · ⭐⭐⭐⭐⭐","10/09 · slot obbligatorio","Roque Nublo, Gran Canaria"],
+ ["Tejeda","Borgo + dolci · ⭐⭐⭐⭐","10/09 · 1,5 h","Tejeda, Gran Canaria"],
+ ["Mirador del Balcón","Panorama · ⭐⭐⭐⭐⭐","11/09 · 60—90 min","Mirador del Balcón, Gran Canaria"],
+ ["Las Canteras","Tramonto urbano · ⭐⭐⭐⭐","11/09 · 1,5 h","Playa de Las Canteras, Gran Canaria"]
+];
+function renderMustSee(){document.getElementById("mustSeeGrid").innerHTML=mustSee.map(p=>"<div class='placeCard'><div class='placeBody'><div class='kicker'>"+p[1].split(" · ")[0]+"</div><h3>"+p[0]+"</h3><p>"+p[2]+"</p><div class='btnRow'><a class='btn secondary small' target='_blank' rel='noopener' href='"+mapsSearch(p[3])+"'>Maps ↗</a></div></div></div>").join("")}
+const foods=[
+ ["La Cofradía de Pescadores","Puerto de Mogán","Pesce fresco e cucina canaria · collegato al 6/09","🐟"],
+ ["Dulcería Nublo","Tejeda","Bienmesabe · rituale perfetto dopo la montagna","🍯"],
+ ["Restaurante Angor","Puerto de las Nieves","Opzione pranzo sul mare dell'11/09","🌊"],
+ ["El Rinconcito Andaluz","Da valutare in base alla giornata","Già presente nel vostro Libro d'Oro; verificare orari","🍴"],
+ ["Bar San Fermín","Da valutare in base alla giornata","Suggerimento del Libro d'Oro; verificare disponibilità","🍻"]
+];
+function renderFood(){document.getElementById("foodGrid").innerHTML=foods.map(f=>"<div class='foodCard'><div style='font-size:26px'>"+f[3]+"</div><h3>"+f[0]+"</h3><p><b>📍 "+f[1]+"</b></p><p>"+f[2]+"</p><div class='btnRow'><a class='btn secondary small' target='_blank' rel='noopener' href='"+mapsSearch(f[0]+" Gran Canaria")+"'>Cerca su Maps ↗</a></div></div>").join("")}
+const tripCheckItems=["Documento d'identità/passaporto","Patente fisica","Carta di credito fisica del conducente principale","Voucher Autounion","QR Roque Nublo / screenshot offline se richiesto","Powerbank","Crema solare + occhiali + cappellino","Scarpe da montagna + felpa/giacca","Costume + telo + borraccia","Caricabatterie auto","Prenotazioni e voucher salvati offline"];
+const returnCheckItems=["Stesso livello carburante del ritiro","Foto carrozzeria da tutti i lati","Foto cerchi e pneumatici","Foto vetri e interni","Foto cruscotto + chilometraggio","Controllare bagagliaio e portaoggetti","Conservare ricevuta carburante","Conservare contratto e documentazione","Chiedere conferma di eventuali danni/assenza danni","Chiarire come/quando viene liberato il deposito"];
+function renderPersistentChecks(id,items,key){let saved=JSON.parse(localStorage.getItem(key)||"{}");document.getElementById(id).innerHTML=items.map((x,i)=>"<label class='check "+(saved[i]?"done":"")+"'><input type='checkbox' "+(saved[i]?"checked":"")+" onchange='togglePersistentCheck(\""+key+"\","+i+",this)'><span>"+x+"</span></label>").join("")}
+function togglePersistentCheck(key,i,el){let a=JSON.parse(localStorage.getItem(key)||"{}");a[i]=el.checked;localStorage.setItem(key,JSON.stringify(a));el.parentElement.classList.toggle("done",el.checked)}
+function updateCountdown(){const target=new Date("2026-09-05T10:00:00+02:00").getTime(),now=Date.now(),d=Math.max(0,target-now),days=Math.floor(d/86400000),hrs=Math.floor(d%86400000/3600000),min=Math.floor(d%3600000/60000);const el=document.getElementById("countdown");if(el)el.innerHTML=[[days,"giorni"],[hrs,"ore"],[min,"min"]].map(x=>"<div class='countBox'><b>"+x[0]+"</b><span>"+x[1]+"</span></div>").join("")}
+async function loadWeather(){const box=document.getElementById("weatherGrid"),st=document.getElementById("weatherStatus");try{const url="https://api.open-meteo.com/v1/forecast?latitude=27.7606&longitude=-15.586&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe%2FMadrid&start_date=2026-09-05&end_date=2026-09-12";const r=await fetch(url);if(!r.ok)throw new Error("weather");const j=await r.json();const names=["Sab 5","Dom 6","Lun 7","Mar 8","Mer 9","Gio 10","Ven 11","Sab 12"];const icon=c=>c===0?"☀️":c<=2?"⛅":c<=3?"☁️":c<=67?"🌧️":c<=77?"🌨️":"⛈️";const desc=c=>c===0?"sereno":c<=2?"variabile":c<=3?"nuvoloso":c<=67?"pioggia":c<=77?"neve":"temporale";box.innerHTML=j.daily.time.map((t,i)=>"<div class='weatherDay'><b>"+names[i]+"</b><div class='weatherIcon'>"+icon(j.daily.weather_code[i])+"</div><div class='weatherTemp'>"+Math.round(j.daily.temperature_2m_max[i])+"° / "+Math.round(j.daily.temperature_2m_min[i])+"°</div><div class='weatherDesc'>"+desc(j.daily.weather_code[i])+"<br>pioggia "+(j.daily.precipitation_probability_max[i]??"—")+"%</div></div>").join("");st.innerHTML="<i class='dot ok'></i> Previsione online aggiornata"}catch(e){box.innerHTML="<div class='notice'>Previsione non disponibile in questo momento. Per la decisione finale usate un servizio meteo live il giorno stesso.</div>";st.innerHTML="<i class='dot warn'></i> Offline"}}
 
 function openSettings(){document.getElementById("settingsModal").classList.add("show");document.getElementById("apiKeyInput").value=localStorage.getItem("gc26_maps_key")||"";updateApiHelp()}
 function closeSettings(){document.getElementById("settingsModal").classList.remove("show")}
@@ -463,6 +563,13 @@ function updateApiHelp(){
 function setMapStatus(type,text){const s=document.getElementById("mapStatus");s.innerHTML="<i class='dot "+type+"'></i> "+text}
 function loadGoogleMaps(){
  const key=localStorage.getItem("gc26_maps_key");
+ const isLocal=location.protocol==="file:" || location.protocol==="content:";
+ if(isLocal){
+  setMapStatus("warn","Apri la dashboard pubblicata su GitHub Pages per attivare Maps");
+  const fb=document.getElementById("mapFallback");
+  if(fb){fb.style.display="grid"; const h=fb.querySelector("h3"), p=fb.querySelector("p"); if(h)h.textContent="Google Maps pronta, ma non in modalità file"; if(p)p.textContent="Il file locale può mostrare la dashboard, ma la tua chiave è autorizzata al dominio GitHub Pages. Pubblica questa versione e aprila dall'indirizzo HTTPS.";}
+  return;
+ }
  if(!key){setMapStatus("warn","API key non configurata");return}
  window.__gcMapsInit=async function(){
   try{
@@ -581,7 +688,7 @@ document.getElementById("shareBtn").addEventListener("click",async()=>{
  else {try{await navigator.clipboard.writeText(location.href);alert("Link copiato. Se stai aprendo il file localmente, pubblicalo prima su HTTPS per condividere una pagina web.");}catch(e){alert("Copia manualmente l'indirizzo della pagina.")}}
 });
 
-renderDays();renderQuickPlaces();renderChecks();updateApiHelp();loadGoogleMaps();
+renderDays();renderQuickPlaces();renderChecks();renderMustSee();renderFood();renderPersistentChecks("tripChecks",tripCheckItems,"gc26_trip_checks");renderPersistentChecks("returnChecks",returnCheckItems,"gc26_return_checks");updateCountdown();setInterval(updateCountdown,60000);loadWeather();updateApiHelp();loadGoogleMaps();
 </script>
 </body>
 </html>
