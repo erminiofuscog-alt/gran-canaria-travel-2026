@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f2eb">
+<meta name="description" content="Gran Canaria 2026 — dashboard di viaggio personale per Erminio & Gineth.">
+<title>Gran Canaria 2026 · Travel Dashboard</title>
+<style>
+:root{
+  --bg:#f6f2eb;--surface:#fffdf9;--surface2:#f0ebe2;--ink:#1d2623;--muted:#69736d;
+  --green:#245b4d;--green2:#347765;--sand:#d9c6a0;--gold:#b18a52;--line:#e3ddd3;
+  --red:#a64b45;--shadow:0 18px 55px rgba(37,45,40,.10);--radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+ radial-gradient(900px 500px at 90% -10%,#d9e7df 0,transparent 62%),
+ radial-gradient(800px 500px at -10% 30%,#f0dfc2 0,transparent 58%),
+ var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select{font:inherit}
+a{color:inherit}
+.app{max-width:1280px;margin:auto;padding:18px 18px 110px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}
+.brand{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.brandMark{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:var(--green);color:white;box-shadow:0 8px 22px rgba(36,91,77,.22)}
+.actions{display:flex;gap:8px}
+.iconBtn,.softBtn{border:1px solid var(--line);background:rgba(255,253,249,.82);border-radius:14px;padding:10px 12px;cursor:pointer;color:var(--ink)}
+.softBtn{font-weight:750}
+.hero{position:relative;min-height:470px;border-radius:34px;overflow:hidden;box-shadow:var(--shadow);background:
+linear-gradient(180deg,rgba(10,22,18,.04),rgba(10,22,18,.78)),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=88") center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:1px;background:#fff3}
+.heroContent{position:absolute;left:30px;right:30px;bottom:28px;color:white}
+.eyebrow{font-size:12px;font-weight:850;letter-spacing:.13em;text-transform:uppercase;opacity:.86}
+h1{font-size:clamp(42px,7vw,82px);line-height:.92;letter-spacing:-.055em;margin:9px 0 14px}
+.heroSub{max-width:690px;font-size:17px;line-height:1.5;color:#f2f4f1}
+.heroMeta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px);font-size:12px;font-weight:750}
+.section{margin-top:18px}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.grid.equal{grid-template-columns:1fr 1fr}
+.card{background:rgba(255,253,249,.88);border:1px solid rgba(216,210,200,.78);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.pad{padding:22px}
+.sectionHead{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:15px}
+.sectionHead h2{font-size:23px;letter-spacing:-.025em;margin:0}
+.kicker{font-size:12px;color:var(--green);font-weight:850;text-transform:uppercase;letter-spacing:.1em}
+.muted{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{padding:16px;border-radius:19px;background:var(--surface2);border:1px solid var(--line)}
+.stat b{display:block;font-size:22px;letter-spacing:-.03em}
+.stat span{display:block;margin-top:4px;color:var(--muted);font-size:12px}
+.notice{padding:14px 15px;border-radius:18px;background:#f7f0e4;border:1px solid #e9d9bd;color:#5f5545;font-size:13px;line-height:1.5}
+.notice.important{background:#eef4f0;border-color:#d2e1d9;color:#315246}
+.notice.danger{background:#fbefee;border-color:#eed2cf;color:#7d3d39}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:14px;padding:11px 14px;background:var(--green);color:white;text-decoration:none;font-weight:800;cursor:pointer;box-shadow:0 8px 18px rgba(36,91,77,.15)}
+.btn.secondary{background:var(--surface);color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.btn.small{padding:8px 10px;font-size:12px;border-radius:11px}
+.btnRow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.days{display:flex;gap:8px;overflow:auto;padding-bottom:3px}
+.dayBtn{min-width:112px;text-align:left;padding:12px;border:1px solid var(--line);border-radius:17px;background:var(--surface);cursor:pointer}
+.dayBtn strong{display:block}.dayBtn small{display:block;margin-top:4px;color:var(--muted)}
+.dayBtn.active{background:#eaf2ee;border-color:#a8c4b7;box-shadow:inset 0 0 0 1px #c4d8cf}
+.timeline{margin-top:16px}
+.stop{display:grid;grid-template-columns:82px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.stop:last-child{border-bottom:0}
+.time{font-weight:850;color:var(--green);font-size:13px}
+.stop h3{margin:0 0 4px;font-size:16px}.stop p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+.mapWrap{position:relative;height:560px;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#e7e1d7}
+#map{height:100%;width:100%}
+.mapFallback{height:100%;display:grid;place-items:center;padding:24px;text-align:center;background:
+linear-gradient(135deg,#e7e0d5,#d9e3dc);color:var(--ink)}
+.mapFallback .mini{max-width:520px}
+.mapOverlay{position:absolute;left:14px;right:14px;top:14px;display:flex;gap:8px;flex-wrap:wrap;z-index:3}
+.mapChip{padding:9px 11px;border-radius:999px;background:rgba(255,253,249,.9);border:1px solid rgba(216,210,200,.9);backdrop-filter:blur(12px);font-size:12px;font-weight:800;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.routePanel{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:15px;border:1px solid var(--line);border-radius:18px;background:var(--surface2);margin-top:12px}
+.routePanel b{font-size:15px}.routeStats{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+.routeStats strong{color:var(--ink)}
+.airport{background:linear-gradient(135deg,#edf4ef,#f7f1e6)}
+.airportGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.airBox{padding:15px;border-radius:18px;background:rgba(255,255,255,.64);border:1px solid #dbe3dd}
+.airBox .label{font-size:11px;font-weight:850;color:var(--green);text-transform:uppercase;letter-spacing:.08em}
+.airBox strong{display:block;margin:6px 0;font-size:15px}.airBox span{font-size:12px;color:var(--muted);line-height:1.4}
+.placeGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.placeCard{border:1px solid var(--line);border-radius:20px;background:var(--surface);overflow:hidden}
+.placePhoto{height:135px;background:#d9d5cd center/cover}
+.placeBody{padding:14px}.placeBody h3{margin:0 0 5px;font-size:16px}.placeBody p{margin:0 0 10px;color:var(--muted);font-size:12px;line-height:1.45}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:10px;padding:5px 7px;border-radius:8px;background:var(--surface2);color:var(--muted)}
+.searchBar{display:grid;grid-template-columns:1fr auto auto;gap:8px}
+input,select{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:14px;padding:12px 13px;outline:none}
+input:focus,select:focus{border-color:#9dbbb0;box-shadow:0 0 0 3px #dfeae5}
+.results{display:grid;gap:9px;margin-top:12px}
+.result{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.resultThumb{width:62px;height:62px;border-radius:13px;background:#e7e1d7 center/cover}
+.result h3{margin:0 0 3px;font-size:14px}.result p{margin:0;color:var(--muted);font-size:12px}
+.checklist{display:grid;gap:8px}.check{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.check input{width:18px;height:18px;accent-color:var(--green);margin-top:1px}.check.done span{text-decoration:line-through;color:#8b938e}
+.guideGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.guideItem{padding:15px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.guideItem h3{margin:0 0 6px;font-size:15px}.guideItem p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.settings{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.status{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800}.dot{width:9px;height:9px;border-radius:50%;background:#a9b1ad}.dot.ok{background:#3b8c69}.dot.warn{background:#c28c3e}.dot.bad{background:#b84f49}
+.smallText{font-size:11px;color:var(--muted);line-height:1.5}
+.nav{position:fixed;left:50%;bottom:13px;transform:translateX(-50%);z-index:30;display:flex;gap:4px;padding:6px;border:1px solid rgba(214,208,198,.95);background:rgba(255,253,249,.88);backdrop-filter:blur(18px);border-radius:19px;box-shadow:0 14px 45px rgba(36,44,40,.18)}
+.nav button{border:0;background:transparent;color:#68726d;border-radius:13px;padding:10px 12px;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}
+.nav button.active{background:#e7f0eb;color:var(--green)}
+.modal{position:fixed;inset:0;background:rgba(21,29,25,.52);backdrop-filter:blur(8px);display:none;align-items:flex-end;justify-content:center;z-index:50}
+.modal.show{display:flex}
+.modalBox{width:min(700px,100%);background:var(--surface);border-radius:28px 28px 0 0;padding:22px;box-shadow:0 -20px 70px rgba(0,0,0,.2)}
+.modalHead{display:flex;justify-content:space-between;gap:15px;align-items:center}.modalHead h2{margin:0;font-size:21px}
+code{background:#eee8df;border-radius:7px;padding:2px 5px}
+footer{text-align:center;color:#7b847f;font-size:11px;margin-top:24px}
+@media(max-width:900px){
+ .grid,.grid.equal{grid-template-columns:1fr}.airportGrid{grid-template-columns:repeat(2,1fr)}
+ .stats{grid-template-columns:repeat(2,1fr)}.placeGrid{grid-template-columns:1fr 1fr}.hero{min-height:430px}
+ .mapWrap{height:470px}.settings{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+ .app{padding:12px 12px 100px}.hero{min-height:510px;border-radius:28px}.heroContent{left:21px;right:21px;bottom:22px}
+ .heroSub{font-size:15px}.stats{grid-template-columns:1fr 1fr}.airportGrid,.placeGrid,.guideGrid{grid-template-columns:1fr}
+ .stop{grid-template-columns:58px 1fr}.stop .btn{grid-column:2;width:max-content}
+ .routePanel{grid-template-columns:1fr}.searchBar{grid-template-columns:1fr 1fr}.searchBar input{grid-column:1/-1}
+ .nav{max-width:calc(100% - 16px);width:calc(100% - 16px);justify-content:space-around}.nav button{padding:10px 7px;font-size:10px}
+ .topbar .softBtn span{display:none}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="brandMark">✦</span> Gran Canaria · 2026</div>
+    <div class="actions">
+      <button class="softBtn" id="shareBtn">↗ <span>Condividi</span></button>
+      <button class="softBtn" id="settingsBtn">⚙ <span>Google Maps</span></button>
+    </div>
+  </div>
+
+  <section id="home" class="panel">
+    <div class="hero">
+      <div class="heroContent">
+        <div class="eyebrow">Erminio & Gineth · 5—12 settembre 2026</div>
+        <h1>Gran Canaria.</h1>
+        <div class="heroSub">Otto giorni costruiti intorno a mare, montagne, borghi, festa del Pino e tramonti. Una dashboard pensata per essere usata davvero durante il viaggio.</div>
+        <div class="heroMeta">
+          <span class="pill">📍 Playa del Inglés</span>
+          <span class="pill">👫 2 persone</span>
+          <span class="pill">🚗 Volkswagen Polo / similare</span>
+          <span class="pill">🌋 740—760 km circa</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section card pad">
+      <div class="sectionHead"><div><div class="kicker">Panoramica</div><h2>Il viaggio in numeri</h2></div><span class="pill" style="background:#edf3ef;color:var(--green);border-color:#d7e4dc">SETTEMBRE</span></div>
+      <div class="stats">
+        <div class="stat"><b>8</b><span>giorni</span></div>
+        <div class="stat"><b>7</b><span>notti</span></div>
+        <div class="stat"><b>~750 km</b><span>guida complessiva stimata</span></div>
+        <div class="stat"><b>2</b><span>persone</span></div>
+      </div>
+    </div>
+
+    <div class="section grid">
+      <div class="card pad">
+        <div class="sectionHead"><div><div class="kicker">Priorità</div><h2>Le cose da non sbagliare</h2></div></div>
+        <div class="notice important">🚌 <b>7—8 settembre:</b> Teror va gestita con il trasporto pubblico speciale della Fiesta del Pino, non cercando di arrivare in auto.</div>
+        <div class="notice" style="margin-top:9px">🏔️ <b>Roque Nublo:</b> verificare slot, QR, punto di parcheggio/trasporto e orari della navetta prima della giornata.</div>
+        <div class="notice" style="margin-top:9px">🥾 <b>Barranco de las Vacas:</b> obiettivo 08:15 e niente parcheggio sulla carreggiata.</div>
+        <div class="notice" style="margin-top:9px">🌊 <b>Mirador del Balcón:</b> usare la viabilità aperta; non impostare il vecchio tracciato chiuso della GC-200.</div>
+      </div>
+      <div class="card pad">
+        <div class="sectionHead"><div><div class="kicker">Accesso rapido</div><h2>Apri ciò che serve</h2></div></div>
+        <div class="guideGrid">
+          <button class="guideItem" onclick="showSection('itinerario')"><h3>📅 Giorni</h3><p>Timeline completa, tappa per tappa.</p></button>
+          <button class="guideItem" onclick="showSection('mappa')"><h3>🗺️ Mappa</h3><p>Marker, percorsi e ricerca Places.</p></button>
+          <button class="guideItem" onclick="showSection('logistica')"><h3>✈️ Logistica</h3><p>Fiumicino, auto e checklist.</p></button>
+          <button class="guideItem" onclick="showSection('guida')"><h3>⭐ Guida</h3><p>Consigli operativi e priorità.</p></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section card pad">
+      <div class="sectionHead"><div><div class="kicker">Meteo</div><h2>Settembre a Gran Canaria</h2></div><span class="status"><i class="dot warn"></i> Previsioni live disponibili quando la data rientra nella finestra meteo</span></div>
+      <div class="stats">
+        <div class="stat"><b>27.2°C</b><span>media massime storiche</span></div>
+        <div class="stat"><b>21.4°C</b><span>media minime storiche</span></div>
+        <div class="stat"><b>9 mm</b><span>pioggia media indicativa</span></div>
+        <div class="stat"><b>242 h</b><span>sole medio indicativo</span></div>
+      </div>
+      <p class="smallText" style="margin:12px 0 0">Questi valori sono climatologici, non una previsione. La dashboard può mostrare una previsione online quando il periodo del viaggio entra nella finestra disponibile del servizio meteo.</p>
+    </div>
+  </section>
+
+  <section id="itinerario" class="panel" style="display:none">
+    <div class="card pad">
+      <div class="sectionHead"><div><div class="kicker">8 giorni · ritmo preciso</div><h2>Itinerario operativo</h2></div><span class="pill" style="background:#edf3ef;color:var(--green);border-color:#d7e4dc">5—12 SET</span></div>
+      <div class="days" id="days"></div>
+      <div id="dayContent" class="timeline"></div>
+    </div>
+  </section>
+
+  <section id="mappa" class="panel" style="display:none">
+    <div class="card pad">
+      <div class="sectionHead"><div><div class="kicker">Google Maps · interattiva</div><h2>Mappa del viaggio</h2></div><span id="mapStatus" class="status"><i class="dot"></i> Non collegata</span></div>
+      <div class="mapWrap">
+        <div id="mapFallback" class="mapFallback"><div class="mini"><div style="font-size:42px">🗺️</div><h3>La mappa Google apparirà qui</h3><p class="muted">Per usare la mappa interattiva, inserisci la tua API key nel pannello Google Maps. Se la dashboard è aperta come file locale, usa una pubblicazione HTTPS per far funzionare correttamente le restrizioni della chiave.</p><button class="btn" onclick="openSettings()">Configura Google Maps</button></div></div>
+        <div id="map" style="display:none"></div>
+        <div class="mapOverlay" id="mapOverlay" style="display:none">
+          <span class="mapChip">🇮🇨 Gran Canaria</span><span class="mapChip" id="mapDayChip">5 settembre</span>
+        </div>
+      </div>
+      <div class="routePanel">
+        <div><div class="kicker">Percorso selezionato</div><b id="routeTitle">5 settembre · Playa del Inglés → Maspalomas</b><div class="routeStats" id="routeStats"><span>Google Maps live</span></div></div>
+        <button class="btn" id="routeBtn">🧭 Calcola</button>
+      </div>
+      <div class="btnRow">
+        <a class="btn secondary" id="openGoogleMap" target="_blank" rel="noopener">Apri Google Maps ↗</a>
+        <button class="btn secondary" onclick="showSection('itinerario')">Vedi giornata</button>
+      </div>
+    </div>
+
+    <div class="section grid">
+      <div class="card pad">
+        <div class="sectionHead"><div><div class="kicker">Places API (New)</div><h2>Cerca vicino alla tappa</h2></div></div>
+        <div class="searchBar">
+          <input id="placeQuery" value="ristoranti" placeholder="ristoranti, spiagge, beach club…">
+          <select id="placeType"><option value="">Tutti</option><option value="restaurant">Ristoranti</option><option value="cafe">Caffè</option><option value="bar">Bar</option><option value="tourist_attraction">Attrazioni</option><option value="beach">Spiagge</option></select>
+          <button class="btn" id="placeSearchBtn">Cerca</button>
+        </div>
+        <div id="placeResults" class="results"><div class="notice">Collega Google Maps per cercare luoghi reali, foto e dati aggiornati.</div></div>
+      </div>
+      <div class="card pad">
+        <div class="sectionHead"><div><div class="kicker">Destinazioni chiave</div><h2>Una mappa pronta anche senza API</h2></div></div>
+        <div class="placeGrid" id="quickPlaces"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="logistica" class="panel" style="display:none">
+    <div class="card pad airport">
+      <div class="sectionHead"><div><div class="kicker">Operazione aeroporto · 5 settembre</div><h2>San Giorgio a Liri → Fiumicino</h2></div><span class="pill" style="background:#245b4d;color:white;border:0">ARRIVO 04:00</span></div>
+      <div class="notice danger"><b>Obiettivo:</b> essere a <b>Via delle Pinne 74, Fiumicino</b> entro le 04:00. La dashboard non sostituisce la navigazione live: prima di partire apri il percorso in Google Maps e considera traffico, lavori, soste e procedure del parcheggio.</div>
+      <div class="airportGrid" style="margin-top:12px">
+        <div class="airBox"><div class="label">Partenza</div><strong>San Giorgio a Liri (FR)</strong><span>Per arrivare al parcheggio entro le 04:00, la pianificazione precedente indicava circa 01:45—02:00 come finestra prudenziale.</span></div>
+        <div class="airBox"><div class="label">Destinazione</div><strong>Via delle Pinne 74</strong><span>00054 Fiumicino (RM), Italia · punto parcheggio indicato per la partenza.</span></div>
+        <div class="airBox"><div class="label">Dopo il parcheggio</div><strong>Shuttle / trasferimento</strong><span>Prevedere margine per parcheggio, convalida e trasferimento verso FCO.</span></div>
+        <div class="airBox"><div class="label">Aeroporto</div><strong>Leonardo da Vinci · FCO</strong><span>La tratta reale e i tempi vanno ricontrollati con Google Maps al momento della partenza.</span></div>
+      </div>
+      <div class="btnRow">
+        <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=San%20Giorgio%20a%20Liri%2C%20FR%2C%20Italia&destination=Via%20delle%20Pinne%2074%2C%2000054%20Fiumicino%20RM%2C%20Italia&travelmode=driving">🧭 San Giorgio → Via delle Pinne</a>
+        <a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=Via%20delle%20Pinne%2074%2C%2000054%20Fiumicino%20RM%2C%20Italia&destination=Aeroporto%20Leonardo%20da%20Vinci%2C%20Fiumicino%20RM%2C%20Italia&travelmode=driving">🛫 Parcheggio → FCO</a>
+      </div>
+    </div>
+
+    <div class="section grid">
+      <div class="card pad">
+        <div class="sectionHead"><div><div class="kicker">Autounion</div><h2>Auto a noleggio</h2></div><span class="pill" style="background:#edf3ef;color:var(--green);border-color:#d7e4dc">VOUCHER</span></div>
+        <div class="guideGrid">
+          <div class="guideItem"><h3>🚗 Ritiro</h3><p>5/09/2026 · 10:00 · Gran Canaria Airport (LPA). Navetta: 2° piano Partenze, Uscita 4.</p></div>
+          <div class="guideItem"><h3>🔑 Auto</h3><p>Volkswagen Polo o similare · Economy · manuale · 5 posti · km illimitati.</p></div>
+          <div class="guideItem"><h3>💳 Deposito</h3><p>€1.300 su carta di credito del conducente principale. Il voucher richiede una carta fisica compatibile.</p></div>
+          <div class="guideItem"><h3>↩️ Riconsegna</h3><p>12/09/2026 · 09:00 · LPA. Chiarire la procedura esatta al ritiro.</p></div>
+        </div>
+      </div>
+      <div class="card pad">
+        <div class="sectionHead"><div><div class="kicker">Prima di partire</div><h2>Checklist auto</h2></div></div>
+        <div id="carChecks" class="checklist"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guida" class="panel" style="display:none">
+    <div class="grid">
+      <div class="card pad">
+        <div class="sectionHead"><div><div class="kicker">Regole d'oro</div><h2>Come vivere bene il viaggio</h2></div></div>
+        <div class="guideGrid">
+          <div class="guideItem"><h3>🌿 Meglio 3 che 7</h3><p>Se una giornata salta per stanchezza, traffico o meteo, non cercate di recuperare tutto la sera stessa.</p></div>
+          <div class="guideItem"><h3>🚌 Teror 7—8</h3><p>Lasciare l'auto a Las Palmas e seguire il dispositivo speciale Global. Non tentare l'accesso in auto al centro di Teror.</p></div>
+          <div class="guideItem"><h3>🏔️ Roque Nublo</h3><p>QR, slot, parcheggio e navetta vanno verificati prima della visita. Tenere 30—45 minuti di margine per attese.</p></div>
+          <div class="guideItem"><h3>🌊 Costa ovest</h3><p>Per il Mirador del Balcón seguire GC-2 e la deviazione corretta; il vecchio tratto della GC-200 è chiuso.</p></div>
+          <div class="guideItem"><h3>🥾 Barranco</h3><p>Obiettivo 08:15. Poche piazzole: non parcheggiare sulla carreggiata.</p></div>
+          <div class="guideItem"><h3>☀️ Dune</h3><p>Il tardo pomeriggio è il momento migliore per luce più morbida e sabbia meno calda; restare sui percorsi consentiti.</p></div>
+        </div>
+      </div>
+      <div class="card pad">
+        <div class="sectionHead"><div><div class="kicker">Giornate impegnative</div><h2>Dove tenere più margine</h2></div></div>
+        <div class="notice danger"><b>11 settembre</b> è la giornata più impegnativa al volante: Agaete + Puerto de las Nieves + Mirador del Balcón + Las Palmas + rientro.</div>
+        <div class="notice" style="margin-top:9px"><b>10 settembre</b> è la seconda più impegnativa, per strade e tempi della montagna.</div>
+        <div class="notice" style="margin-top:9px"><b>7 settembre</b> è lunga in km, ma il trasferimento verso Teror è previsto con Global.</div>
+        <div class="notice important" style="margin-top:9px"><b>Totale indicativo:</b> circa 740—760 km e 10 h 45 min—13 h di guida pura complessiva, secondo il piano della guida personale.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>Gran Canaria Travel Dashboard · 5—12 settembre 2026 · Dati di itinerario provenienti dalla guida personale verificata il 25 agosto 2026.</footer>
+</div>
+
+<nav class="nav" aria-label="Navigazione">
+  <button class="active" data-section="home" onclick="showSection('home',this)">⌂ Home</button>
+  <button data-section="itinerario" onclick="showSection('itinerario',this)">📅 Giorni</button>
+  <button data-section="mappa" onclick="showSection('mappa',this)">🗺️ Mappa</button>
+  <button data-section="logistica" onclick="showSection('logistica',this)">✈️ Logistica</button>
+  <button data-section="guida" onclick="showSection('guida',this)">⭐ Guida</button>
+</nav>
+
+<div id="settingsModal" class="modal" onclick="if(event.target===this)closeSettings()">
+  <div class="modalBox">
+    <div class="modalHead"><h2>Google Maps · configurazione</h2><button class="iconBtn" onclick="closeSettings()">✕</button></div>
+    <p class="muted" style="line-height:1.5">Inserisci la tua API key. Viene salvata <b>solo su questo dispositivo</b> nel browser. Per una chiave con restrizione “Siti web”, la dashboard deve essere pubblicata su un indirizzo HTTP/HTTPS autorizzato; un file <code>content://</code> o <code>file://</code> può far fallire l'autorizzazione del referrer.</p>
+    <label class="kicker" for="apiKeyInput">API KEY</label>
+    <input id="apiKeyInput" type="password" placeholder="AIza..." autocomplete="off" style="margin-top:7px">
+    <div class="btnRow"><button class="btn" onclick="saveApiKey()">Collega e carica Maps</button><button class="btn secondary" onclick="clearApiKey()">Cancella chiave</button></div>
+    <div id="apiHelp" class="notice" style="margin-top:12px"></div>
+  </div>
+</div>
+
+<script>
+const itinerary = [
+ {date:"5 SET",title:"Arrivo · Maspalomas",subtitle:"LPA → Playa del Inglés → primo tramonto",stops:[
+  ["10:00","Ritiro auto Autounion","Gran Canaria Airport (LPA). Navetta gratuita al 2° piano Partenze, Uscita 4."],
+  ["10:15—11:00","Navetta + partenza verso Playa del Inglés","Trasferimento verso la base."],
+  ["11:00—13:00","Base / bagagli / check-in","Check-in secondo disponibilità."],
+  ["13:00—15:00","Pranzo leggero + spesa","Giornata volutamente senza eccessi."],
+  ["17:00","Maspalomas · Faro + dune","Golden hour. Camminare sulle dune solo sui percorsi consentiti."],
+  ["SERA","Cena tranquilla","Rientro alla base."]
+ ],origin:"Playa del Inglés, Gran Canaria",destination:"Maspalomas, Gran Canaria"},
+ {date:"6 SET",title:"Anfi del Mar + Puerto de Mogán",subtitle:"Mare e relax",stops:[
+  ["08:30","Partenza da Playa del Inglés","Obiettivo arrivo ad Anfi intorno alle 09:15."],
+  ["09:15—13:00","Anfi del Mar","Spiaggia, bagno, relax e fotografie."],
+  ["13:00","Pranzo / snack","Pausa prima del trasferimento."],
+  ["14:00","Partenza per Puerto de Mogán","Trasferimento sulla costa sud-occidentale."],
+  ["14:30—18:00","Puerto de Mogán","Porto, canali, vicoli e lungomare. Opzione gastronomica: La Cofradía de Pescadores."],
+  ["18:00—19:00","Aperitivo / passeggiata","Poi rientro a Playa del Inglés."]
+ ],origin:"Playa del Inglés, Gran Canaria",destination:"Puerto de Mogán, Gran Canaria",waypoints:["Anfi del Mar, Gran Canaria"]},
+ {date:"7 SET",title:"Arehucas + Arucas + Vegueta + Romería",subtitle:"Il giorno della grande festa",stops:[
+  ["08:00","Partenza da Playa del Inglés","Giornata lunga: rispettare gli orari."],
+  ["09:30—10:30","Destilería Arehucas","Visita circa un'ora. Dati verificati: €10, lun—gio 09:30—14:00; l'8/09 è chiusa."],
+  ["10:30—11:30","Arucas","Centro + Iglesia de San Juan Bautista."],
+  ["12:00","Partenza per Las Palmas","Trasferimento verso la capitale."],
+  ["12:30—13:45","Vegueta + pranzo rapido","Poi Triana / San Telmo."],
+  ["14:15","Parcheggio + Global speciale","Lasciare l'auto a Las Palmas; non tentare di arrivare a Teror in auto."],
+  ["15:30","ROMERÍA-OFRENDA","Orario ufficiale indicato dalla guida."],
+  ["20:00","Verbena de la Víspera","Serata nel cuore della festa."],
+  ["24:00","Fuochi artificiali","Rientro con il dispositivo Global; prevedere attese."]
+ ],origin:"Playa del Inglés, Gran Canaria",destination:"Las Palmas de Gran Canaria, Gran Canaria",waypoints:["Arucas, Gran Canaria","Vegueta, Las Palmas de Gran Canaria"]},
+ {date:"8 SET",title:"Día de Ntra. Sra. del Pino",subtitle:"Teror · giornata da non saltare",stops:[
+  ["09:00","Partenza da Playa del Inglés","Raggiungere Las Palmas e usare il trasporto speciale."],
+  ["10:30—11:00","Arrivo a Teror con Global","Non arrivare con l'auto al centro."],
+  ["11:00","Ricevimento ufficiale","Punto centrale della giornata."],
+  ["12:00","Solemne Eucaristía","Orario ufficiale indicato dalla guida."],
+  ["13:00","Processione della Virgen del Pino","Petalada lungo il percorso, soprattutto Calle Real."],
+  ["14:30—17:30","Pranzo + passeggiata","Restare a Teror invece di tornare avanti e indietro."],
+  ["21:00","Concerto Seguridad Social","Plaza de Sintes."],
+  ["DOPO","Rientro con Global","Prevedere attese."]
+ ],origin:"Playa del Inglés, Gran Canaria",destination:"Teror, Gran Canaria"},
+ {date:"9 SET",title:"Barranco de las Vacas + Agüimes + Guayadeque + Amadores",subtitle:"Geologia + villaggi + mare",stops:[
+  ["06:45","Sveglia","Giornata molto mattutina."],
+  ["07:00","Partenza da Playa del Inglés","Obiettivo arrivare presto al Barranco."],
+  ["08:15—09:15","Barranco de las Vacas","Canyon + foto. Non parcheggiare sulla carreggiata."],
+  ["10:00","Agüimes storico","Passeggiata breve."],
+  ["11:00—13:30","Barranco de Guayadeque","Paesaggio, case-grotta e pranzo in zona."],
+  ["15:30","Partenza verso Amadores","Trasferimento verso il mare."],
+  ["17:00—19:00","Playa de Amadores","Bagno + relax."],
+  ["SERA","Rientro","Fine giornata."]
+ ],origin:"Playa del Inglés, Gran Canaria",destination:"Playa de Amadores, Gran Canaria",waypoints:["Barranco de las Vacas, Gran Canaria","Agüimes, Gran Canaria","Barranco de Guayadeque, Gran Canaria"]},
+ {date:"10 SET",title:"Pico de las Nieves + Roque Nublo + Tejeda",subtitle:"Il cuore vulcanico dell'isola",stops:[
+  ["05:45—06:00","Sveglia","Preparare acqua, scarpe chiuse, cappellino, crema e una felpa/giacca."],
+  ["06:15","Partenza","Obiettivo Pico intorno alle 07:30."],
+  ["07:30—08:15","Pico de las Nieves","Panorama."],
+  ["08:30","Verso Cruz de Los Llanos","Seguire esattamente lo slot Roque Nublo prenotato."],
+  ["10:00+","Roque Nublo","Accesso regolamentato: QR, slot e trasporto da verificare. Non parcheggiare intorno al Roque."],
+  ["13:30","Tejeda","Pranzo intorno alle 14:00."],
+  ["15:00—16:30","Centro di Tejeda + Dulcería Nublo","Bienmesabe e passeggiata."],
+  ["17:00+","Rientro","Giornata di montagna conclusa."]
+ ],origin:"Playa del Inglés, Gran Canaria",destination:"Tejeda, Gran Canaria",waypoints:["Pico de las Nieves, Gran Canaria","Roque Nublo, Gran Canaria"]},
+ {date:"11 SET",title:"Agaete + Puerto de las Nieves + Mirador + Las Canteras",subtitle:"Costa selvaggia + capitale",stops:[
+  ["07:30","Partenza","Giornata più impegnativa al volante."],
+  ["09:30","Agaete","Arrivo circa alle 09:30."],
+  ["10:00—12:30","Puerto de las Nieves","Porto + piscine naturali."],
+  ["12:30—14:00","Pranzo sul mare","Opzione El Angor."],
+  ["14:00","Partenza verso ovest","GC-2 + deviazione corretta per Mirador."],
+  ["16:00—17:30","Mirador del Balcón","Raggiungere dalla viabilità aperta; poi tornare indietro."],
+  ["18:00","Partenza verso Las Palmas","GC-2."],
+  ["19:00—20:30","Las Canteras","Spiaggia + tramonto."],
+  ["SERA","Rientro a Playa del Inglés","Ultimo grande rientro."]
+ ],origin:"Playa del Inglés, Gran Canaria",destination:"Playa de Las Canteras, Gran Canaria",waypoints:["Agaete, Gran Canaria","Puerto de las Nieves, Gran Canaria","Mirador del Balcón, Gran Canaria"]},
+ {date:"12 SET",title:"Partenza · Dune → LPA",subtitle:"Ultimo bagno possibile + riconsegna auto",stops:[
+  ["MATTINA","Dune / Maspalomas se possibile","Ultimo assaggio dell'isola senza compromettere l'orario di riconsegna."],
+  ["09:00","Riconsegna auto Autounion","Gran Canaria Airport (LPA). Chiarire la procedura esatta al ritiro."],
+  ["DOPO","Aeroporto","Partenza."]
+ ],origin:"Playa del Inglés, Gran Canaria",destination:"Gran Canaria Airport (LPA), Spain"}
+];
+
+const quickPlaces = [
+ ["Maspalomas","Dune + Faro","https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80","Maspalomas, Gran Canaria"],
+ ["Anfi del Mar","Mare + relax","https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80","Anfi del Mar, Gran Canaria"],
+ ["Puerto de Mogán","Porto + passeggiata","https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80","Puerto de Mogán, Gran Canaria"],
+ ["Roque Nublo","Montagna","https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80","Roque Nublo, Gran Canaria"],
+ ["Agaete","Costa nord-ovest","https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80","Agaete, Gran Canaria"],
+ ["Las Canteras","Tramonto in città","https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80","Playa de Las Canteras, Gran Canaria"]
+];
+
+let map=null, currentRoute=null, routePolylines=[], placeMarkers=[];
+let currentDay=0, googleReady=false;
+
+function showSection(id,btn){
+ document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
+ const el=document.getElementById(id); if(el) el.style.display="block";
+ document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
+ const target=btn || document.querySelector('.nav button[data-section="'+id+'"]'); if(target) target.classList.add("active");
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(id==="mappa" && googleReady && !map) initGoogleMap();
+}
+
+function renderDays(){
+ const wrap=document.getElementById("days");
+ wrap.innerHTML="";
+ itinerary.forEach((d,i)=>{
+  const b=document.createElement("button"); b.className="dayBtn"+(i===0?" active":"");
+  b.innerHTML="<strong>"+d.date+"</strong><small>"+d.title.split(" · ")[0]+"</small>";
+  b.onclick=()=>{currentDay=i;document.querySelectorAll(".dayBtn").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderDay(i);updateMapForDay();};
+  wrap.appendChild(b);
+ });
+ renderDay(0);
+}
+function renderDay(i){
+ const d=itinerary[i], c=document.getElementById("dayContent");
+ document.getElementById("routeTitle").textContent=d.date+" · "+d.origin+" → "+d.destination;
+ c.innerHTML="<h3 style='margin:4px 0'>"+d.title+"</h3><p class='muted'>"+d.subtitle+"</p>"+
+ d.stops.map((s,j)=>"<div class='stop'><div class='time'>"+s[0]+"</div><div><h3>"+s[1]+"</h3><p>"+s[2]+"</p></div>"+
+ "<a class='btn secondary small' target='_blank' rel='noopener' href='"+mapsDir(s[1], j<d.stops.length-1?d.stops[j+1][1]:d.title)+"'>↗ Maps</a></div>").join("");
+}
+function mapsDir(origin,destination){
+ return "https://www.google.com/maps/dir/?api=1&origin="+encodeURIComponent(origin)+ "&destination="+encodeURIComponent(destination)+"&travelmode=driving";
+}
+function mapsSearch(q){return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);}
+function renderQuickPlaces(){
+ document.getElementById("quickPlaces").innerHTML=quickPlaces.map(p=>"<div class='placeCard'><div class='placePhoto' style=\"background-image:url('"+p[2]+"')\"></div><div class='placeBody'><h3>"+p[0]+"</h3><p>"+p[1]+"</p><a class='btn secondary small' target='_blank' rel='noopener' href='"+mapsSearch(p[3])+"'>Apri Maps ↗</a></div></div>").join("");
+}
+function renderChecks(){
+ const items=["Fotografare carrozzeria, cerchi, pneumatici e vetri","Fotografare interni, cruscotto, chilometraggio e carburante","Controllare dotazioni e ricevuta carburante","Conservare voucher e contratto","In caso di danno: foto + personale Autounion + rapporto se necessario"];
+ const key="gc26_checks";
+ let saved=JSON.parse(localStorage.getItem(key)||"{}");
+ document.getElementById("carChecks").innerHTML=items.map((x,i)=>"<label class='check "+(saved[i]?"done":"")+"'><input type='checkbox' "+(saved[i]?"checked":"")+" onchange='toggleCheck("+i+",this)'><span>"+x+"</span></label>").join("");
+}
+function toggleCheck(i,el){let a=JSON.parse(localStorage.getItem("gc26_checks")||"{}");a[i]=el.checked;localStorage.setItem("gc26_checks",JSON.stringify(a));el.parentElement.classList.toggle("done",el.checked)}
+
+function openSettings(){document.getElementById("settingsModal").classList.add("show");document.getElementById("apiKeyInput").value=localStorage.getItem("gc26_maps_key")||"";updateApiHelp()}
+function closeSettings(){document.getElementById("settingsModal").classList.remove("show")}
+function clearApiKey(){localStorage.removeItem("gc26_maps_key");location.reload()}
+function saveApiKey(){
+ const key=document.getElementById("apiKeyInput").value.trim();
+ if(!key){alert("Inserisci una API key.");return}
+ localStorage.setItem("gc26_maps_key",key);
+ location.reload();
+}
+function updateApiHelp(){
+ const protocol=location.protocol;
+ document.getElementById("apiHelp").innerHTML = protocol==="file:" || protocol==="content:" ?
+ "⚠️ <b>Stai aprendo la pagina come file locale.</b> I link Google Maps funzionano, ma per Maps JavaScript/Places/Routes è molto più affidabile pubblicare la dashboard su HTTPS e autorizzare il dominio nella restrizione della chiave." :
+ "✓ Pagina servita via "+protocol.toUpperCase()+" — se il dominio è autorizzato nella chiave, Maps può essere caricato.";
+}
+function setMapStatus(type,text){const s=document.getElementById("mapStatus");s.innerHTML="<i class='dot "+type+"'></i> "+text}
+function loadGoogleMaps(){
+ const key=localStorage.getItem("gc26_maps_key");
+ if(!key){setMapStatus("warn","API key non configurata");return}
+ window.__gcMapsInit=async function(){
+  try{
+   const {Map}=await google.maps.importLibrary("maps");
+   map=new Map(document.getElementById("map"),{center:{lat:27.99,lng:-15.62},zoom:10,mapId:"DEMO_MAP_ID",mapTypeControl:false,streetViewControl:false,fullscreenControl:true});
+   googleReady=true;
+   document.getElementById("mapFallback").style.display="none";
+   document.getElementById("map").style.display="block";
+   document.getElementById("mapOverlay").style.display="flex";
+   setMapStatus("ok","Google Maps collegata");
+   updateMapForDay();
+  }catch(e){console.error(e);setMapStatus("bad","Google Maps rifiutata");document.getElementById("mapFallback").style.display="grid";document.querySelector("#mapFallback h3").textContent="Google Maps non autorizzata";document.querySelector("#mapFallback p").textContent="Controlla API abilitate e restrizioni della chiave. La dashboard resta utilizzabile con i pulsanti Google Maps."; }
+ };
+ const script=document.createElement("script");
+ script.src="https://maps.googleapis.com/maps/api/js?key="+encodeURIComponent(key)+"&v=weekly&loading=async&callback=__gcMapsInit";
+ script.async=true;script.defer=true;script.onerror=()=>{setMapStatus("bad","Impossibile caricare Maps")};
+ document.head.appendChild(script);
+}
+async function updateMapForDay(){
+ if(!googleReady || !map)return;
+ const d=itinerary[currentDay];
+ document.getElementById("mapDayChip").textContent=d.date+" · "+d.title.split(" · ")[0];
+ try{
+  const {AdvancedMarkerElement}=await google.maps.importLibrary("marker");
+  const {LatLngBounds}=await google.maps.importLibrary("core");
+  placeMarkersCleanup();
+  const bounds=new LatLngBounds();
+  const points=[d.origin,...(d.waypoints||[]),d.destination];
+  points.forEach((p,i)=>{
+    const marker=new AdvancedMarkerElement({map,position:geocodeFallback(p),title:p});
+    placeMarkers.push(marker);
+    bounds.extend(geocodeFallback(p));
+  });
+  if(points.length) map.fitBounds(bounds,{top:70,right:50,bottom:70,left:50});
+  document.getElementById("openGoogleMap").href=mapsDirWithWaypoints(d.origin,d.destination,d.waypoints||[]);
+  await calculateRoute(false);
+ }catch(e){console.error(e)}
+}
+function placeMarkersCleanup(){placeMarkers.forEach(m=>m.map=null);placeMarkers=[];routePolylines.forEach(p=>p.setMap(null));routePolylines=[]}
+function geocodeFallback(name){
+ const coords={
+  "Playa del Inglés, Gran Canaria":{lat:27.7606,lng:-15.5860},
+  "Maspalomas, Gran Canaria":{lat:27.7606,lng:-15.5860},
+  "Anfi del Mar, Gran Canaria":{lat:27.767,lng:-15.684},
+  "Puerto de Mogán, Gran Canaria":{lat:27.8184,lng:-15.7646},
+  "Arucas, Gran Canaria":{lat:28.1199,lng:-15.5238},
+  "Vegueta, Las Palmas de Gran Canaria":{lat:28.1001,lng:-15.4138},
+  "Las Palmas de Gran Canaria, Gran Canaria":{lat:28.1235,lng:-15.4363},
+  "Teror, Gran Canaria":{lat:28.0608,lng:-15.5487},
+  "Barranco de las Vacas, Gran Canaria":{lat:27.917,lng:-15.458},
+  "Agüimes, Gran Canaria":{lat:27.9048,lng:-15.4461},
+  "Barranco de Guayadeque, Gran Canaria":{lat:27.924,lng:-15.497},
+  "Playa de Amadores, Gran Canaria":{lat:27.7986,lng:-15.7238},
+  "Pico de las Nieves, Gran Canaria":{lat:27.9616,lng:-15.5692},
+  "Roque Nublo, Gran Canaria":{lat:27.9707,lng:-15.6201},
+  "Tejeda, Gran Canaria":{lat:27.9957,lng:-15.6154},
+  "Agaete, Gran Canaria":{lat:28.1002,lng:-15.7001},
+  "Puerto de las Nieves, Gran Canaria":{lat:28.0994,lng:-15.715},
+  "Mirador del Balcón, Gran Canaria":{lat:28.016,lng:-15.785},
+  "Playa de Las Canteras, Gran Canaria":{lat:28.1407,lng:-15.4315},
+  "Gran Canaria Airport (LPA), Spain":{lat:27.9319,lng:-15.3866}
+ };
+ return coords[name]||coords["Playa del Inglés, Gran Canaria"];
+}
+function mapsDirWithWaypoints(origin,destination,waypoints){
+ let u=mapsDir(origin,destination); if(waypoints.length) u+="&waypoints="+waypoints.map(encodeURIComponent).join("%7C"); return u;
+}
+async function calculateRoute(showAlert=true){
+ if(!googleReady || !map){if(showAlert) alert("Collega Google Maps prima di calcolare il percorso.");return}
+ try{
+  const {Route}=await google.maps.importLibrary("routes");
+  const d=itinerary[currentDay];
+  const req={origin:d.origin,destination:d.destination,intermediates:(d.waypoints||[]).map(location=>({location})),travelMode:"DRIVING",routingPreference:"TRAFFIC_AWARE",fields:["path","distanceMeters","durationMillis","localizedValues"]};
+  const {routes}=await Route.computeRoutes(req);
+  if(!routes || !routes.length) throw new Error("Nessun percorso");
+  routePolylines.forEach(p=>p.setMap(null));routePolylines=routes[0].createPolylines();routePolylines.forEach(p=>p.setMap(map));
+  currentRoute=routes[0];
+  const km=(routes[0].distanceMeters/1000).toFixed(1);
+  const min=Math.round(routes[0].durationMillis/60000);
+  document.getElementById("routeStats").innerHTML="<span>Distanza <strong>"+km+" km</strong></span><span>Tempo Google <strong>~"+formatMinutes(min)+"</strong></span><span>Modalità <strong>auto</strong></span>";
+  document.getElementById("routeBtn").textContent="↻ Ricalcola";
+ }catch(e){
+  console.error(e);
+  if(showAlert) alert("Google Routes non autorizzata o non disponibile. Verifica che Routes API sia abilitata e che la chiave abbia accesso. Puoi comunque usare 'Apri Google Maps'.");
+ }
+}
+function formatMinutes(m){return m>=60?Math.floor(m/60)+"h "+(m%60)+"m":m+" min"}
+
+async function searchPlaces(){
+ if(!googleReady){alert("Collega Google Maps prima di cercare luoghi.");return}
+ const q=document.getElementById("placeQuery").value.trim(); if(!q)return;
+ const type=document.getElementById("placeType").value;
+ const d=itinerary[currentDay];
+ try{
+  const {Place}=await google.maps.importLibrary("places");
+  const fields=["displayName","location","formattedAddress","rating","userRatingCount","googleMapsURI","businessStatus"];
+  const req={textQuery:q+" near "+d.destination,fields,maxResultCount:8,language:"it",region:"IT",locationBias:geocodeFallback(d.destination)};
+  if(type){req.includedType=type;req.useStrictTypeFiltering=true}
+  const {places}=await Place.searchByText(req);
+  const box=document.getElementById("placeResults");
+  if(!places.length){box.innerHTML="<div class='notice'>Nessun risultato per questa ricerca.</div>";return}
+  box.innerHTML=places.map((p,i)=>{
+    const rating=p.rating?("⭐ "+p.rating.toFixed(1)+(p.userRatingCount?" · "+p.userRatingCount+" recensioni":"")):"";
+    return "<div class='result'><div class='resultThumb'></div><div><h3>"+escapeHtml(p.displayName||"Luogo")+"</h3><p>"+escapeHtml(p.formattedAddress||"Gran Canaria")+"<br>"+rating+"</p></div><a class='btn secondary small' target='_blank' rel='noopener' href='"+(p.googleMapsURI||mapsSearch(p.displayName||"Gran Canaria"))+"'>Apri ↗</a></div>"
+  }).join("");
+ }catch(e){console.error(e);document.getElementById("placeResults").innerHTML="<div class='notice danger'>Ricerca Places rifiutata. Verifica Places API (New) e Maps JavaScript API nella chiave.</div>"}
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]))}
+
+document.getElementById("routeBtn").addEventListener("click",()=>calculateRoute(true));
+document.getElementById("placeSearchBtn").addEventListener("click",searchPlaces);
+document.getElementById("placeQuery").addEventListener("keydown",e=>{if(e.key==="Enter")searchPlaces()});
+document.getElementById("settingsBtn").addEventListener("click",openSettings);
+document.getElementById("shareBtn").addEventListener("click",async()=>{
+ if(navigator.share){try{await navigator.share({title:"Gran Canaria 2026",text:"La nostra dashboard di viaggio a Gran Canaria.",url:location.href})}catch(e){}}
+ else {try{await navigator.clipboard.writeText(location.href);alert("Link copiato. Se stai aprendo il file localmente, pubblicalo prima su HTTPS per condividere una pagina web.");}catch(e){alert("Copia manualmente l'indirizzo della pagina.")}}
+});
+
+renderDays();renderQuickPlaces();renderChecks();updateApiHelp();loadGoogleMaps();
+</script>
+</body>
+</html>
