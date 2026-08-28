@@ -13,19 +13,103 @@
 .mapWrap{position:relative;height:560px;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#e7e1d7}#map{height:100%;width:100%}.mapFallback{height:100%;display:grid;place-items:center;padding:24px;text-align:center;background:linear-gradient(135deg,#e7e0d5,#d9e3dc)}.mapFallback .mini{max-width:520px}.mapOverlay{position:absolute;left:14px;right:14px;top:14px;display:flex;gap:8px;flex-wrap:wrap;z-index:3;pointer-events:none}.mapChip{padding:9px 11px;border-radius:999px;background:rgba(255,253,249,.92);border:1px solid rgba(216,210,200,.9);backdrop-filter:blur(12px);font-size:12px;font-weight:800;box-shadow:0 8px 24px rgba(0,0,0,.08)}.routePanel{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:15px;border:1px solid var(--line);border-radius:18px;background:var(--surface2);margin-top:12px}.routePanel b{font-size:15px}.routeStats{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px}.routeStats strong{color:var(--ink)}.mapLegend{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--muted)}.legendDot{display:inline-flex;align-items:center;gap:5px}.legendDot i{width:9px;height:9px;border-radius:50%;background:var(--green);display:inline-block}
 .searchBar{display:grid;grid-template-columns:1fr auto auto;gap:8px}input,select{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:14px;padding:12px 13px;outline:none}input:focus,select:focus{border-color:#9dbbb0;box-shadow:0 0 0 3px #dfeae5}.results{display:grid;gap:9px;margin-top:12px}.result{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}.resultThumb{width:62px;height:62px;border-radius:13px;background:#e7e1d7 center/cover}.result h3{margin:0 0 3px;font-size:14px}.result p{margin:0;color:var(--muted);font-size:12px}.placeGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.placeCard{border:1px solid var(--line);border-radius:20px;background:var(--surface);overflow:hidden}.placePhoto{height:135px;background:#d9d5cd center/cover}.placeBody{padding:14px}.placeBody h3{margin:0 0 5px;font-size:16px}.placeBody p{margin:0 0 10px;color:var(--muted);font-size:12px;line-height:1.45}
 .airport{background:linear-gradient(135deg,#edf4ef,#f7f1e6)}.airportGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.airBox{padding:15px;border-radius:18px;background:rgba(255,255,255,.64);border:1px solid #dbe3dd}.airBox .label{font-size:11px;font-weight:850;color:var(--green);text-transform:uppercase;letter-spacing:.08em}.airBox strong{display:block;margin:6px 0;font-size:15px}.airBox span{font-size:12px;color:var(--muted);line-height:1.4}.checklist{display:grid;gap:8px}.check{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}.check input{width:18px;height:18px;accent-color:var(--green);margin-top:1px}.check.done span{text-decoration:line-through;color:#8b938e}.weatherGrid{display:grid;grid-template-columns:repeat(8,1fr);gap:7px;overflow:auto}.weatherDay{min-width:105px;padding:12px;border:1px solid var(--line);border-radius:16px;background:var(--surface);text-align:center}.weatherDay b{display:block;font-size:12px}.weatherIcon{font-size:24px;margin:8px 0}.weatherTemp{font-weight:850}.weatherDesc{font-size:10px;color:var(--muted);margin-top:4px;min-height:28px}.weatherStatus{font-size:11px;color:var(--muted);margin-top:10px}.foodGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.foodCard{padding:16px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.foodCard h3{margin:0 0 5px}.foodCard p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}.price{font-weight:850;color:var(--green);font-size:12px;margin-top:8px}.restaurantGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.restaurantCard{padding:16px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.restaurantCard h3{margin:0 0 5px;font-size:16px}.restaurantCard p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}.restaurantDay{display:inline-flex;align-items:center;padding:6px 8px;border-radius:999px;background:#eaf2ee;color:var(--green);font-size:10px;font-weight:850;margin-bottom:9px}.budgetGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px}.budgetEstimate{padding:18px;border-radius:20px;background:linear-gradient(135deg,#edf4ef,#f7f1e6);border:1px solid #dbe3dd}.budgetEstimate .big{font-size:34px;font-weight:900;letter-spacing:-.04em;color:var(--green)}.budgetEstimate p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.5}.budgetBreakdown{display:grid;gap:7px}.budgetLine{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.budgetLine:last-child{border-bottom:0}.budgetLine b{color:var(--green)}.budgetRange{font-size:11px;color:var(--muted);margin-top:8px}.budgetRow{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.budgetRow:last-child{border-bottom:0}.budgetTotal{padding:14px;border-radius:16px;background:#edf3ef;font-size:15px;font-weight:850;color:var(--green)}.tripStatus{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}.countdown{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.countBox{min-width:78px;padding:12px 13px;border:1px solid var(--line);border-radius:16px;background:var(--surface2)}.countBox b{display:block;font-size:22px}.countBox span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.nextCard{padding:18px;border-radius:22px;background:linear-gradient(135deg,#245b4d,#347765);color:white;box-shadow:0 14px 35px rgba(36,91,77,.18)}.nextCard .kicker{color:#dcebe5}.nextCard h2{margin:7px 0;font-size:26px;letter-spacing:-.03em}.nextCard p{margin:0;color:#eaf3ef;line-height:1.5;font-size:13px}.quickLinks{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.quickLink{padding:13px;border:1px solid var(--line);border-radius:16px;background:var(--surface);cursor:pointer;text-align:left}.quickLink b{display:block;font-size:13px}.quickLink span{display:block;margin-top:4px;color:var(--muted);font-size:11px}.status{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800}.dot{width:9px;height:9px;border-radius:50%;background:#a9b1ad}.dot.ok{background:#3b8c69}.dot.warn{background:#c28c3e}.dot.bad{background:#b84f49}.smallText{font-size:11px;color:var(--muted);line-height:1.5}
-.nav{max-width:calc(100% - 16px);overflow-x:auto;position:fixed;left:50%;bottom:13px;transform:translateX(-50%);z-index:2000;display:flex;gap:4px;padding:6px;border:1px solid rgba(214,208,198,.95);background:rgba(255,253,249,.9);backdrop-filter:blur(18px);border-radius:19px;box-shadow:0 14px 45px rgba(36,44,40,.18)}.nav button{border:0;background:transparent;color:#68726d;border-radius:13px;padding:10px 12px;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}.nav button.active{background:#e7f0eb;color:var(--green)}.modal{position:fixed;inset:0;background:rgba(21,29,25,.52);backdrop-filter:blur(8px);display:none;align-items:flex-end;justify-content:center;z-index:50}.modal.show{display:flex}.modalBox{width:min(700px,100%);background:var(--surface);border-radius:28px 28px 0 0;padding:22px;box-shadow:0 -20px 70px rgba(0,0,0,.2)}.modalHead{display:flex;justify-content:space-between;gap:15px;align-items:center}.modalHead h2{margin:0;font-size:21px}code{background:#eee8df;border-radius:7px;padding:2px 5px}footer{text-align:center;color:#7b847f;font-size:11px;margin-top:24px}
+.nav{max-width:calc(100% - 16px);overflow-x:auto;position:fixed;left:50%;bottom:13px;transform:translateX(-50%);z-index:2000;display:flex;gap:4px;padding:6px;border:1px solid rgba(214,208,198,.95);background:rgba(255,253,249,.9);backdrop-filter:blur(18px);border-radius:19px;box-shadow:0 14px 45px rgba(36,44,40,.18)}.nav button{border:0;background:transparent;color:#68726d;border-radius:13px;padding:10px 12px;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}.nav button.active{background:#e7f0eb;color:var(--green)}.modal{position:fixed;inset:0;background:rgba(21,29,25,.52);backdrop-filter:blur(8px);display:none;align-items:flex-end;justify-content:center;z-index:5000}.modal.show{display:flex}.modalBox{width:min(700px,100%);max-height:min(88vh,760px);overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--surface);border-radius:28px 28px 0 0;padding:22px;box-shadow:0 -20px 70px rgba(0,0,0,.2)}body.modal-open{overflow:hidden}body.modal-open .nav{opacity:0;pointer-events:none;transform:translate(-50%,12px)}.modalHead{display:flex;justify-content:space-between;gap:15px;align-items:center}.modalHead h2{margin:0;font-size:21px}code{background:#eee8df;border-radius:7px;padding:2px 5px}footer{text-align:center;color:#7b847f;font-size:11px;margin-top:24px}
 @media(max-width:900px){.grid,.equal,.tripStatus,.dayHero{grid-template-columns:1fr}.airportGrid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.placeGrid{grid-template-columns:1fr 1fr}.mapWrap{height:470px}.quickLinks{grid-template-columns:1fr 1fr}.extraGrid{grid-template-columns:1fr 1fr}.weatherGrid{grid-template-columns:repeat(4,1fr)}}
+.simpleMapMarker{position:relative;width:1px;height:1px}.simpleMapMarker .markerCore{position:absolute;left:-18px;top:-18px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#245b4d;color:#fff;border:3px solid rgba(255,253,249,.98);box-shadow:0 5px 14px rgba(20,35,28,.25);font-size:13px;font-weight:900}.simpleMapMarker.start .markerCore{background:#1677e8}.simpleMapMarker.end .markerCore{background:#b18a52}.simpleMapMarker .markerLabel{position:absolute;left:-34px;top:23px;white-space:nowrap;padding:6px 9px;border-radius:10px;background:rgba(255,253,249,.96);border:1px solid rgba(216,210,200,.9);box-shadow:0 5px 16px rgba(20,35,28,.14);font-size:10px;font-weight:800;color:#26322d}.simpleMapMarker.start .markerLabel{color:#1677e8}.simpleMapMarker.end .markerLabel{color:#765b2f}
 @media(max-width:620px){.app{padding:12px 12px 100px}.hero{min-height:510px;border-radius:28px}.heroContent{left:21px;right:21px;bottom:22px}.heroSub{font-size:15px}.stats{grid-template-columns:1fr 1fr}.airportGrid,.placeGrid,.guideGrid,.extraGrid,.foodGrid{grid-template-columns:1fr}.stop{grid-template-columns:58px 1fr}.stop .btn{grid-column:2;width:max-content}.routePanel{grid-template-columns:1fr}.searchBar{grid-template-columns:1fr 1fr}.searchBar input{grid-column:1/-1}.nav{width:calc(100% - 16px);justify-content:flex-start}.nav button{padding:10px 7px;font-size:10px}.topbar .softBtn span{display:none}.weatherGrid{grid-template-columns:repeat(2,1fr)}}
 
 /* FINAL WOW LAYER */
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,18,29,.72) 0%,rgba(5,18,29,.36) 48%,rgba(5,18,29,.12) 100%),linear-gradient(180deg,rgba(4,14,22,.18),rgba(4,14,22,.76));pointer-events:none}.heroContent{z-index:1;max-width:900px}.hero .eyebrow{font-weight:800;letter-spacing:.18em}.hero h1{font-size:clamp(52px,8vw,96px);text-transform:uppercase;line-height:.88;text-shadow:0 8px 28px rgba(0,0,0,.28)}.hero h1:after{content:"2026";display:block;color:#f2bf32;font-size:.28em;letter-spacing:.08em;line-height:1.1;margin-top:12px}.heroSub{max-width:760px;font-size:18px}.heroMeta .pill{background:rgba(7,24,36,.42);border-color:rgba(255,255,255,.26)}.wowBar{margin:-52px 28px 0;position:relative;z-index:4;background:rgba(9,24,37,.94);color:#fff;border:1px solid rgba(255,255,255,.16);border-radius:24px;box-shadow:0 24px 60px rgba(8,21,32,.22);display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden}.wowMetric{padding:20px 18px;border-right:1px solid rgba(255,255,255,.12)}.wowMetric:last-child{border-right:0}.wowMetric b{display:block;font-family:"Manrope",sans-serif;font-size:24px}.wowMetric span{display:block;color:#b9c7ce;font-size:11px;margin-top:4px}.section.card{transition:transform .18s ease,box-shadow .18s ease}.section.card:hover{transform:translateY(-2px);box-shadow:0 22px 65px rgba(37,45,40,.13)}.kicker{font-family:"Manrope",sans-serif}.sectionHead h2,.dayIntro h3,.nextCard h2,.placeBody h3,.restaurantCard h3,.foodCard h3{font-family:"Manrope",sans-serif}.foodCard.clickable,.restaurantCard.clickable{cursor:pointer;transition:transform .16s ease,box-shadow .16s ease}.foodCard.clickable:hover,.restaurantCard.clickable:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(30,40,35,.10)}.foodIcon{font-size:31px;margin-bottom:8px}.foodTag{display:inline-flex;padding:5px 8px;border-radius:999px;background:#eef4f0;color:var(--green);font-size:10px;font-weight:800;margin-top:9px}.dayRestaurants{display:grid;gap:9px}.dayRestaurantRow{display:grid;grid-template-columns:80px 1fr auto;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}.dayRestaurantRow .when{font-size:10px;font-weight:900;color:var(--green);text-transform:uppercase}.dayRestaurantRow h4{margin:0 0 3px;font-family:"Manrope",sans-serif;font-size:14px}.dayRestaurantRow p{margin:0;color:var(--muted);font-size:11px}.modalBox.foodModal{max-height:88vh;overflow:auto}.foodDetailHero{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:20px;background:linear-gradient(135deg,#edf4ef,#f7f1e6);border:1px solid #dbe3dd}.foodDetailHero .bigIcon{font-size:46px}.foodDetailHero h3{margin:0 0 4px;font-family:"Manrope",sans-serif;font-size:24px}.foodDetail p{color:var(--muted);line-height:1.55}.sourceNote{font-size:10px;color:#8a928d;margin-top:12px}.logDay{display:grid;grid-template-columns:88px 1fr auto;gap:12px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:17px;background:var(--surface);margin-top:8px}.logDay strong{font-family:"Manrope",sans-serif}.logDay small{color:var(--muted);line-height:1.4}.heroCredit{position:absolute;right:18px;bottom:12px;z-index:2;font-size:9px;color:rgba(255,255,255,.7)}
 @media(max-width:900px){.wowBar{margin:-34px 18px 0;grid-template-columns:repeat(3,1fr)}.wowMetric:nth-child(3){border-right:0}.wowMetric:nth-child(n+4){display:none}}
 @media(max-width:620px){.hero{min-height:545px}.wowBar{margin:-28px 8px 0;grid-template-columns:repeat(2,1fr);border-radius:20px}.wowMetric{padding:14px}.wowMetric:nth-child(2){border-right:0}.wowMetric:nth-child(3){display:none}.dayRestaurantRow,.logDay{grid-template-columns:1fr}.heroCredit{font-size:8px}.foodDetailHero{padding:13px}.foodDetailHero .bigIcon{font-size:38px}}
+
+/* ===== PREMIUM MOTION / VISUAL LAYER ===== */
+:root{
+  --ease-premium:cubic-bezier(.22,1,.36,1);
+  --glass:rgba(255,253,249,.72);
+}
+html{scroll-behavior:auto}
+body{overflow-x:hidden}
+.hero{isolation:isolate;transform:translateZ(0)}
+.hero:before{content:"";position:absolute;inset:-8%;background:inherit;z-index:-2;transform:scale(1.06);will-change:transform}
+.heroContent>*{will-change:transform,opacity}
+.heroMeta .pill{transition:transform .35s var(--ease-premium),background .35s ease,box-shadow .35s ease}
+.heroMeta .pill:hover{transform:translateY(-4px) scale(1.02);background:rgba(255,255,255,.22);box-shadow:0 10px 30px rgba(0,0,0,.16)}
+.wowBar{backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.wowMetric{position:relative;overflow:hidden}
+.wowMetric:after{content:"";position:absolute;left:18px;right:18px;bottom:0;height:2px;background:linear-gradient(90deg,transparent,#d4a72c,transparent);transform:scaleX(0);transform-origin:center;transition:transform .5s var(--ease-premium)}
+.wowMetric:hover:after{transform:scaleX(1)}
+.card,.section.card{will-change:transform}
+.placeCard{transition:transform .5s var(--ease-premium),box-shadow .5s var(--ease-premium)}
+.placeCard:hover{transform:translateY(-8px);box-shadow:0 28px 70px rgba(24,35,30,.16)}
+.placePhoto{position:relative;transition:transform .8s var(--ease-premium),filter .5s ease}
+.placeCard:hover .placePhoto{transform:scale(1.045);filter:saturate(1.08)}
+.placeCard .placePhoto:after{content:"↗";position:absolute;right:12px;top:12px;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:rgba(9,24,37,.62);color:white;backdrop-filter:blur(10px);opacity:0;transform:translateY(6px);transition:.35s var(--ease-premium)}
+.placeCard:hover .placePhoto:after{opacity:1;transform:none}
+.dayBtn,.mapDayBtn,.quickLink,.guideItem,.foodCard,.restaurantCard{transition:transform .35s var(--ease-premium),box-shadow .35s ease,border-color .35s ease}
+.dayBtn:hover,.mapDayBtn:hover,.quickLink:hover,.guideItem:hover,.foodCard:hover,.restaurantCard:hover{transform:translateY(-4px);box-shadow:0 14px 35px rgba(30,40,35,.09);border-color:#bfd2c9}
+.stop{transition:background .3s ease,padding .3s var(--ease-premium);border-radius:16px}
+.stop:hover{background:rgba(234,242,238,.48);padding-left:10px;padding-right:10px}
+#map{filter:saturate(.94) contrast(1.02)}
+.mapWrap{box-shadow:inset 0 0 0 1px rgba(255,255,255,.32),0 22px 60px rgba(30,40,35,.10)}
+.leaflet-marker-icon{filter:drop-shadow(0 6px 10px rgba(15,30,24,.25))}
+.modal.show .modalBox{animation:premiumSheet .6s var(--ease-premium) both}
+@keyframes premiumSheet{from{opacity:0;transform:translateY(35px) scale(.985)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(28px)}
+.reveal.revealed{opacity:1;transform:none}
+.nav{transition:transform .35s var(--ease-premium),box-shadow .35s ease}
+.nav.nav-hidden{transform:translate(-50%,130%)}
+.nav button{transition:transform .25s var(--ease-premium),background .25s ease}
+.nav button:active{transform:scale(.92)}
+
+/* PREMIUM MAPLIBRE */
+#map{background:linear-gradient(145deg,#dfe9e2,#f5eee2)}
+.leaflet-container{font-family:"DM Sans",sans-serif;border-radius:inherit;background:#dcecf1}.leaflet-control-zoom{border:0!important;border-radius:14px!important;overflow:hidden;box-shadow:0 12px 30px rgba(20,35,28,.16)!important}.leaflet-control-zoom a{width:38px!important;height:38px!important;line-height:38px!important;background:rgba(255,253,249,.94)!important;color:#1f2a25!important;border-bottom:1px solid #ddd!important}.leaflet-control-attribution{font-size:9px!important;background:rgba(255,253,249,.78)!important}.simpleRouteHalo{filter:drop-shadow(0 2px 4px rgba(20,80,130,.18))}
+.premiumMarker{position:relative;width:42px;height:42px;display:grid;place-items:center;cursor:pointer;filter:drop-shadow(0 7px 12px rgba(24,57,47,.28));}
+.markerCore{position:relative;z-index:2;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#fffdf9;border:3px solid #245b4d;color:#245b4d;font-weight:900;font-size:11px;box-shadow:0 0 0 5px rgba(255,253,249,.45)}
+.premiumMarker.start .markerCore{background:#245b4d;color:#fff;border-color:#fff}
+.premiumMarker.end .markerCore{background:#b18a52;color:#fff;border-color:#fff}
+.markerPulse{position:absolute;width:42px;height:42px;border-radius:50%;background:rgba(36,91,77,.18);animation:markerPulse 2.2s ease-out infinite}
+.premiumMarker.end .markerPulse{background:rgba(177,138,82,.2)}
+.markerLabel{position:absolute;left:50%;top:46px;transform:translateX(-50%);white-space:nowrap;padding:5px 8px;border-radius:9px;background:rgba(255,253,249,.88);backdrop-filter:blur(8px);border:1px solid rgba(227,221,211,.9);font-size:10px;font-weight:800;color:#1d2623;box-shadow:0 6px 16px rgba(20,35,28,.1);pointer-events:none}
+@keyframes markerPulse{0%{transform:scale(.65);opacity:.75}70%,100%{transform:scale(1.45);opacity:0}}
+.mapWrap:after{content:"DRAG · ZOOM · RUOTA";position:absolute;right:14px;bottom:14px;z-index:3;padding:6px 9px;border-radius:10px;background:rgba(255,253,249,.78);backdrop-filter:blur(10px);font-size:9px;font-weight:850;letter-spacing:.08em;color:#69736d;pointer-events:none}
+@media(max-width:700px){.markerLabel{font-size:9px}.mapWrap:after{font-size:8px;bottom:10px;right:10px}.leaflet-control-zoom a{width:34px!important;height:34px!important;line-height:34px!important}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ===== WOW POLISH ===== */
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 72% 28%,rgba(255,255,255,.18),transparent 24%),linear-gradient(115deg,transparent 35%,rgba(255,255,255,.06) 50%,transparent 65%);mix-blend-mode:screen;opacity:.8}.heroContent{z-index:2}.hero .eyebrow,.hero h1,.hero .heroSub,.hero .heroMeta{will-change:transform,opacity}.hero h1{max-width:900px;text-wrap:balance}.heroMeta .pill{transition:transform .35s ease,background .35s ease,border-color .35s ease}.heroMeta .pill:hover{transform:translateY(-3px);background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.38)}
+.panel{transform-origin:50% 0}.card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}.card:hover{box-shadow:0 24px 70px rgba(37,45,40,.13)}.quickLink,.guideItem,.placeCard,.foodCard,.dayBtn,.mapDayBtn{transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease,background .28s ease}.quickLink:hover,.guideItem:hover,.placeCard:hover,.foodCard:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(37,45,40,.10);border-color:#c6d5ce}.placePhoto{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .35s ease}.placeCard:hover .placePhoto{transform:scale(1.055);filter:saturate(1.08)}
+.wowProgress{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--green),var(--gold));z-index:9999;box-shadow:0 0 14px rgba(177,138,82,.45)}.nav{transition:transform .35s ease,opacity .35s ease}.nav.nav-hidden{transform:translateY(calc(100% + 24px));opacity:.2}.mapWrap{box-shadow:inset 0 0 0 1px rgba(255,255,255,.25),0 18px 45px rgba(37,45,40,.10)}.mapOverlay{transition:transform .5s ease}.mapWrap:hover .mapOverlay{transform:translateY(-2px)}
+.premiumMarker{position:relative;width:42px;height:42px;display:grid;place-items:center}.premiumMarker .markerCore{position:relative;z-index:2;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:#fff;border:2px solid rgba(255,255,255,.95);box-shadow:0 8px 18px rgba(36,91,77,.32);font-size:11px;font-weight:900}.premiumMarker.end .markerCore{background:var(--gold)}.premiumMarker.start .markerCore{background:#315f53}.markerPulse{position:absolute;width:28px;height:28px;border-radius:50%;background:rgba(36,91,77,.25);animation:markerPulse 2.1s ease-out infinite}.premiumMarker.end .markerPulse{background:rgba(177,138,82,.28)}@keyframes markerPulse{0%{transform:scale(.8);opacity:.8}70%,100%{transform:scale(1.8);opacity:0}}
+@media(max-width:700px){.hero{min-height:520px;border-radius:26px}.heroContent{left:20px;right:20px;bottom:20px}.heroSub{font-size:15px}.mapWrap{height:470px}.card:hover{transform:none;box-shadow:var(--shadow)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.hero:after{display:none}}
+
+#guida .guideItem{position:relative;cursor:pointer;min-height:126px;display:flex;flex-direction:column;justify-content:space-between}#guida .guideItem:after{content:'↗';position:absolute;right:13px;top:11px;color:var(--green);font-weight:900;opacity:.45;transition:.25s}#guida .guideItem:hover:after{opacity:1;transform:translate(2px,-2px)}#guida .guideHint{display:flex;align-items:center;gap:7px;margin-top:10px;font-size:11px;font-weight:800;color:var(--green)}.guideModal{max-width:560px}.guideModalBody{padding-top:4px;color:var(--muted);line-height:1.65;font-size:15px}.guideModalBody .guideModalLead{padding:14px 15px;border-radius:16px;background:var(--surface2);border:1px solid var(--line);margin-bottom:14px;color:var(--ink);font-weight:750}.guideModalBody .guideModalNote{padding:14px 15px;border-radius:16px;background:#eef4f0;border:1px solid #d2e1d9;color:#315246;font-size:13px}.mapLoadingPulse{width:58px;height:58px;border-radius:50%;margin:0 auto 18px;background:radial-gradient(circle,#fff 0 28%,transparent 29%),conic-gradient(from 0deg,var(--green),var(--gold),var(--green));animation:mapPulse 1.25s linear infinite;box-shadow:0 0 0 8px rgba(36,91,77,.08)}@keyframes mapPulse{to{transform:rotate(360deg)}}
+
+.placeCard{cursor:pointer;position:relative;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}.placeCard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(34,43,39,.12);border-color:#b8cfc4}.photoPlaceCard:focus-visible{outline:3px solid #8db3a4;outline-offset:3px}.placePhoto{position:relative;overflow:hidden;background-size:cover}.placePhoto:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(18,27,24,.5));pointer-events:none}.photoHint{position:absolute;right:10px;bottom:10px;z-index:2;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);padding:6px 9px;border-radius:999px;font-size:10px;font-weight:800;color:#254f43}.placeEyebrow{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#5f7c70;font-weight:800;margin-bottom:5px}.placeActions{display:flex;gap:7px;flex-wrap:wrap}.placeCaption{position:absolute;left:18px;right:18px;bottom:18px;padding:12px 14px;border-radius:16px;background:rgba(16,24,21,.72);backdrop-filter:blur(12px);color:#fff;z-index:10;pointer-events:none}.placeCaptionName{font-size:18px;font-weight:900}.placeCaptionSub{font-size:12px;opacity:.88;margin-top:2px}.placeCaptionCredit{font-size:9px;opacity:.7;margin-top:6px}@media(max-width:620px){.placeCaption{left:10px;right:10px;bottom:10px}.placeCaptionName{font-size:16px}}
 </style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- PREMIUM LIBRARIES -->
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.26/dist/lenis.css">
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+<script type="module">
+  import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+  window.PhotoSwipeLightbox = PhotoSwipeLightbox;
+</script>
 </head>
-<body>
+<body><div class="wowProgress" id="wowProgress" aria-hidden="true"></div>
 <div class="app">
 <div class="topbar"><div class="brand"><span class="brandMark">✦</span> GRAN CANARIA <em>2026</em></div><div class="actions"><button class="softBtn" id="shareBtn">↗ <span>Condividi</span></button><button class="softBtn" id="settingsBtn">⚙ <span>Google Maps</span></button></div></div>
 <section id="home" class="panel">
@@ -39,7 +123,7 @@
 
 <section id="mappa" class="panel" style="display:none"><div class="card pad"><div class="sectionHead"><div><div class="kicker">Mappa interattiva</div><h2>Il viaggio sulla mappa</h2></div><span id="mapStatus" class="status"><i class="dot warn"></i> Mappa base</span></div><div class="days mapDays" id="mapDays" aria-label="Seleziona giornata mappa"></div>
 <style>.mapDays{margin:0 0 12px;scrollbar-width:thin}.mapDays .dayBtn{min-width:92px;text-align:center;padding:10px 12px}.mapDays .dayBtn strong{font-size:12px}.mapDays .dayBtn small{font-size:10px}@media(max-width:620px){.mapDays .dayBtn{min-width:82px}}</style>
-<div class="mapWrap"><div id="mapFallback" class="mapFallback"><div class="mini"><div style="font-size:42px">🗺️</div><h3>Caricamento mappa…</h3><p class="muted">La mappa interattiva usa i punti già verificati dell'itinerario. Google Maps resta disponibile per la navigazione reale.</p></div></div><div id="map"></div><div class="mapOverlay"><span class="mapChip">🇮🇨 Gran Canaria</span><span class="mapChip" id="mapDayChip">5 SET</span></div></div><div class="mapLegend"><span class="legendDot"><i></i> tappa</span><span>•</span><span>Linea = ordine del viaggio</span><span>•</span><span>Per la navigazione usa Google Maps/Waze</span></div><div class="routePanel"><div><div class="kicker">Percorso selezionato</div><b id="routeTitle">5 SET · Playa del Inglés → Maspalomas</b><div class="routeStats" id="routeStats"><span>Percorso schematico</span></div></div><button class="btn" id="routeBtn">🧭 Google Maps</button></div><div class="btnRow"><a class="btn secondary" id="openGoogleMap" target="_blank" rel="noopener">Apri Google Maps ↗</a><button class="btn secondary" onclick="showSection('itinerario');setTimeout(()=>{const b=document.querySelectorAll('#days .dayBtn')[currentDay];if(b)b.click()},0)">Vedi giornata</button></div></div><div class="section grid"><div class="card pad"><div class="sectionHead"><div><div class="kicker">Google Places</div><h2>Cerca vicino alla tappa</h2></div></div><div class="searchBar"><input id="placeQuery" value="ristoranti" placeholder="ristoranti, spiagge, beach club…"><select id="placeType"><option value="">Tutti</option><option value="restaurant">Ristoranti</option><option value="cafe">Caffè</option><option value="bar">Bar</option><option value="tourist_attraction">Attrazioni</option></select><button class="btn" id="placeSearchBtn">Cerca</button></div><div id="placeResults" class="results"><div class="notice">La ricerca Google Places si attiva quando la tua chiave è collegata. I link Maps dell'itinerario funzionano comunque.</div></div></div><div class="card pad"><div class="sectionHead"><div><div class="kicker">Destinazioni chiave</div><h2>Le tappe che contano</h2></div></div><div class="placeGrid" id="quickPlaces"></div></div></div></section>
+<div class="mapWrap"><div id="mapFallback" class="mapFallback"><div class="mini"><div class="mapLoadingPulse" aria-hidden="true"></div><h3>Caricamento mappa…</h3><p class="muted">La mappa interattiva usa i punti già verificati dell'itinerario. Google Maps resta disponibile per la navigazione reale.</p></div></div><div id="map"></div><div class="mapOverlay"><span class="mapChip">🇮🇨 Gran Canaria</span><span class="mapChip" id="mapDayChip">5 SET</span></div></div><div class="mapLegend"><span class="legendDot"><i></i> tappa</span><span>•</span><span>🔵 Blu = percorso stradale</span><span>•</span><span>Linea = ordine del viaggio</span><span>•</span><span>Per la navigazione usa Google Maps/Waze</span></div><div class="routePanel"><div><div class="kicker">Percorso selezionato</div><b id="routeTitle">5 SET · Playa del Inglés → Maspalomas</b><div class="routeStats" id="routeStats"><span>Percorso schematico</span></div></div><button class="btn" id="routeBtn">🧭 Google Maps</button></div><div class="btnRow"><a class="btn secondary" id="openGoogleMap" target="_blank" rel="noopener">Apri Google Maps ↗</a><button class="btn secondary" onclick="showSection('itinerario');setTimeout(()=>{const b=document.querySelectorAll('#days .dayBtn')[currentDay];if(b)b.click()},0)">Vedi giornata</button></div></div><div class="section grid"><div class="card pad"><div class="sectionHead"><div><div class="kicker">Google Places</div><h2>Cerca vicino alla tappa</h2></div></div><div class="searchBar"><input id="placeQuery" value="ristoranti" placeholder="ristoranti, spiagge, beach club…"><select id="placeType"><option value="">Tutti</option><option value="restaurant">Ristoranti</option><option value="cafe">Caffè</option><option value="bar">Bar</option><option value="tourist_attraction">Attrazioni</option></select><button class="btn" id="placeSearchBtn">Cerca</button></div><div id="placeResults" class="results"><div class="notice">La ricerca Google Places si attiva quando la tua chiave è collegata. I link Maps dell'itinerario funzionano comunque.</div></div></div><div class="card pad"><div class="sectionHead"><div><div class="kicker">Destinazioni chiave</div><h2>Le tappe che contano</h2></div></div><div class="placeGrid" id="quickPlaces"></div></div></div></section>
 
 <section id="luoghi" class="panel" style="display:none"><div class="card pad"><div class="sectionHead"><div><div class="kicker">Selezione ragionata</div><h2>Cosa vedere</h2></div><span class="pill" style="background:#edf3ef;color:var(--green);border-color:#d7e4dc">NON UNA LISTA INFINITA</span></div><div class="notice important"><b>Regola:</b> meglio vivere bene 3 luoghi che correre per 7. Se una giornata salta, taglia prima le cose opzionali.</div><div class="section placeGrid" id="allPlaces"></div></div></section>
 
@@ -93,13 +177,13 @@
   </div>
 </section>
 
-<section id="guida" class="panel" style="display:none"><div class="grid"><div class="card pad"><div class="sectionHead"><div><div class="kicker">Regole d'oro</div><h2>Come vivere bene il viaggio</h2></div></div><div class="guideGrid"><div class="guideItem"><h3>🌿 Meglio 3 che 7</h3><p>Se una giornata salta per stanchezza, traffico o meteo, non recuperare tutto la sera stessa.</p></div><div class="guideItem"><h3>🚌 Teror 7—8</h3><p>Usare il dispositivo speciale Global e non tentare l'accesso in auto al centro.</p></div><div class="guideItem"><h3>🏔️ Roque Nublo</h3><p>QR, slot, parcheggio e trasporto vanno verificati prima della visita.</p></div><div class="guideItem"><h3>🌊 Costa ovest</h3><p>Per Mirador del Balcón seguire GC-2 e deviazione corretta.</p></div><div class="guideItem"><h3>🥾 Barranco</h3><p>Obiettivo 08:15. Poche piazzole: non parcheggiare sulla carreggiata.</p></div><div class="guideItem"><h3>☀️ Dune</h3><p>Tardo pomeriggio: luce più morbida e sabbia meno calda.</p></div></div></div><div class="card pad"><div class="sectionHead"><div><div class="kicker">Giornate impegnative</div><h2>Dove tenere più margine</h2></div></div><div class="notice danger"><b>11 settembre:</b> giornata più impegnativa al volante.</div><div class="notice" style="margin-top:9px"><b>10 settembre:</b> seconda giornata più impegnativa per strade e montagna.</div><div class="notice" style="margin-top:9px"><b>7 settembre:</b> lunga, ma con trasferimento verso Teror previsto con Global.</div></div></div></section>
+<section id="guida" class="panel" style="display:none"><div class="grid"><div class="card pad"><div class="sectionHead"><div><div class="kicker">Regole d'oro</div><h2>Come vivere bene il viaggio</h2></div><span class="status"><i class="dot ok"></i> tocca una regola</span></div><div class="guideGrid" id="guideGrid"></div></div><div class="card pad"><div class="sectionHead"><div><div class="kicker">Giornate impegnative</div><h2>Dove tenere più margine</h2></div></div><div class="notice danger"><b>11 settembre:</b> giornata più impegnativa al volante.</div><div class="notice" style="margin-top:9px"><b>10 settembre:</b> seconda giornata più impegnativa per strade e montagna.</div><div class="notice" style="margin-top:9px"><b>7 settembre:</b> lunga, ma con trasferimento verso Teror previsto con Global.</div></div></div></section>
 
 <footer>Gran Canaria Travel Dashboard · 5—12 settembre 2026 · Itinerario basato sulla guida personale verificata il 25 agosto 2026 · Programma Fiesta del Pino 2026 ricontrollato il 26 agosto 2026.</footer>
 </div>
 <nav class="nav" aria-label="Navigazione"><button class="active" data-section="home" onclick="showSection('home',this)">⌂ Home</button><button data-section="itinerario" onclick="showSection('itinerario',this)">📅 Giorni</button><button data-section="mappa" onclick="showSection('mappa',this)">🗺️ Mappa</button><button data-section="luoghi" onclick="showSection('luoghi',this)">🏝️ Luoghi</button><button data-section="mangiare" onclick="showSection('mangiare',this)">🍴 Mangiare</button><button data-section="meteo" onclick="showSection('meteo',this)">☀️ Meteo</button><button data-section="logistica" onclick="showSection('logistica',this)">✈️ Logistica</button><button data-section="lista" onclick="showSection('lista',this)">🎒 Lista</button><button data-section="budget" onclick="showSection('budget',this)">💶 Budget</button><button data-section="guida" onclick="showSection('guida',this)">⭐ Guida</button></nav>
-<div id="foodModal" class="modal" onclick="if(event.target===this)closeFoodModal()"><div class="modalBox foodModal"><div class="modalHead"><h2>🍴 Dettaglio gastronomico</h2><button class="iconBtn" onclick="closeFoodModal()">✕</button></div><div id="foodDetail" class="foodDetail" style="margin-top:14px"></div></div></div><div id="settingsModal" class="modal" onclick="if(event.target===this)closeSettings()"><div class="modalBox"><div class="modalHead"><h2>Google Maps · configurazione</h2><button class="iconBtn" onclick="closeSettings()">✕</button></div><p class="muted" style="line-height:1.5">La chiave non è inserita nel file. Viene salvata solo su questo dispositivo nel browser. La mappa base funziona anche senza Google; la chiave serve per Google Maps/Places/Routes.</p><label class="kicker" for="apiKeyInput">API KEY</label><input id="apiKeyInput" type="password" placeholder="AIza..." autocomplete="off" style="margin-top:7px"><div class="btnRow"><button class="btn" onclick="saveApiKey()">Collega Google Maps</button><button class="btn secondary" onclick="clearApiKey()">Cancella chiave</button></div><div id="apiHelp" class="notice" style="margin-top:12px"></div></div></div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<div id="guideModal" class="modal" onclick="if(event.target===this)closeGuideModal()"><div class="modalBox guideModal"><div class="modalHead"><div><div class="kicker">REGOLA D'ORO</div><h2 id="guideModalTitle" style="margin-top:4px">Come vivere bene il viaggio</h2></div><button class="iconBtn" onclick="closeGuideModal()">✕</button></div><div id="guideModalBody" class="guideModalBody"></div></div></div><div id="foodModal" class="modal" onclick="if(event.target===this)closeFoodModal()"><div class="modalBox foodModal"><div class="modalHead"><h2>🍴 Dettaglio gastronomico</h2><button class="iconBtn" onclick="closeFoodModal()">✕</button></div><div id="foodDetail" class="foodDetail" style="margin-top:14px"></div></div></div><div id="settingsModal" class="modal" onclick="if(event.target===this)closeSettings()"><div class="modalBox"><div class="modalHead"><h2>Google Maps · configurazione</h2><button class="iconBtn" onclick="closeSettings()">✕</button></div><p class="muted" style="line-height:1.5">La chiave non è inserita nel file. Viene salvata solo su questo dispositivo nel browser. La mappa base funziona anche senza Google; la chiave serve per Google Maps/Places/Routes.</p><label class="kicker" for="apiKeyInput">API KEY</label><input id="apiKeyInput" type="password" placeholder="AIza..." autocomplete="off" style="margin-top:7px"><div class="btnRow"><button class="btn" onclick="saveApiKey()">Collega Google Maps</button><button class="btn secondary" onclick="clearApiKey()">Cancella chiave</button></div><div id="apiHelp" class="notice" style="margin-top:12px"></div></div></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const itinerary=[
 {date:"5 SET",title:"Arrivo · Maspalomas",subtitle:"LPA → Playa del Inglés → primo tramonto",stops:[["10:00","Ritiro auto Autounion","Gran Canaria Airport (LPA). Navetta gratuita al 2° piano Partenze, Uscita 4."],["10:15—11:00","Navetta + partenza verso Playa del Inglés","Trasferimento verso la base."],["11:00—13:00","Base / bagagli / check-in","Check-in secondo disponibilità."],["13:00—15:00","Pranzo leggero + spesa","Giornata volutamente senza eccessi."],["17:00","Maspalomas · Faro + dune","Golden hour. Camminare sulle dune solo sui percorsi consentiti."],["SERA","Cena tranquilla","Rientro alla base."]],origin:"Playa del Inglés, Gran Canaria",destination:"Maspalomas, Gran Canaria",waypoints:[]},
@@ -113,29 +197,166 @@ const itinerary=[
 ];
 const coords={"Playa del Inglés, Gran Canaria":[27.7606,-15.5860],"Maspalomas, Gran Canaria":[27.7606,-15.5860],"Anfi del Mar, Gran Canaria":[27.767,-15.684],"Puerto de Mogán, Gran Canaria":[27.8184,-15.7646],"Arucas, Gran Canaria":[28.1199,-15.5238],"Vegueta, Las Palmas de Gran Canaria":[28.1001,-15.4138],"Las Palmas de Gran Canaria, Gran Canaria":[28.1235,-15.4363],"Teror, Gran Canaria":[28.0608,-15.5487],"Barranco de las Vacas, Gran Canaria":[27.917,-15.458],"Agüimes, Gran Canaria":[27.9048,-15.4461],"Barranco de Guayadeque, Gran Canaria":[27.924,-15.497],"Playa de Amadores, Gran Canaria":[27.7986,-15.7238],"Pico de las Nieves, Gran Canaria":[27.9616,-15.5692],"Roque Nublo, Gran Canaria":[27.9707,-15.6201],"Tejeda, Gran Canaria":[27.9957,-15.6154],"Agaete, Gran Canaria":[28.1002,-15.7001],"Puerto de las Nieves, Gran Canaria":[28.0994,-15.715],"Mirador del Balcón, Gran Canaria":[28.016,-15.785],"Playa de Las Canteras, Gran Canaria":[28.1407,-15.4315],"Gran Canaria Airport (LPA), Spain":[27.9319,-15.3866]};
 const quickPlaces=[
-["Maspalomas","Dune + Faro","https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80","Maspalomas, Gran Canaria"],["Anfi del Mar","Mare + relax","https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80","Anfi del Mar, Gran Canaria"],["Puerto de Mogán","Porto + passeggiata","https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80","Puerto de Mogán, Gran Canaria"],["Roque Nublo","Montagna","https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80","Roque Nublo, Gran Canaria"],["Agaete","Costa nord-ovest","https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80","Agaete, Gran Canaria"],["Las Canteras","Tramonto in città","https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80","Playa de Las Canteras, Gran Canaria"]];
+["Maspalomas","Dune + Faro · 5 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Maspalomas_Dunes_at_Gran_Canaria.jpg/1280px-Maspalomas_Dunes_at_Gran_Canaria.jpg","Maspalomas, Gran Canaria",1280,719,"Daria Schneider · Wikimedia Commons · CC BY-SA 4.0"],
+["Anfi del Mar","Mare + relax · 6 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Anfi_del_Mar.jpg/1280px-Anfi_del_Mar.jpg","Anfi del Mar, Gran Canaria",1280,960,"W. Edlmeier · Wikimedia Commons · CC BY-SA 3.0"],
+["Puerto de Mogán","Porto + passeggiata · 6 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Puerto_de_Mog%C3%A1n.jpg/1280px-Puerto_de_Mog%C3%A1n.jpg","Puerto de Mogán, Gran Canaria",1280,960,"Cardoso · Wikimedia Commons"],
+["Arucas","Iglesia di San Juan Bautista · 7 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/IglesiaArucas.JPG/960px-IglesiaArucas.JPG","Arucas, Gran Canaria",960,1280,"Bheatcoker · Wikimedia Commons · Public domain"],
+["Vegueta","Centro storico di Las Palmas · 7 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Barrio_Vegueta_%2C_Las_Palmas_de_Gran_Canaria..jpg/960px-Barrio_Vegueta_%2C_Las_Palmas_de_Gran_Canaria..jpg","Vegueta, Las Palmas de Gran Canaria",960,1394,"Karmelo26 · Wikimedia Commons · CC0"],
+["Teror","Basilica del Pino · 7—8 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Teror%2C_Gran_Canaria%2C_Bas%C3%ADlica_de_Nuestra_Se%C3%B1ora_del_Pino.jpg/1280px-Teror%2C_Gran_Canaria%2C_Bas%C3%ADlica_de_Nuestra_Se%C3%B1ora_del_Pino.jpg","Teror, Gran Canaria",1280,983,"Gerda Arendt · Wikimedia Commons · CC BY-SA 4.0"],
+["Barranco de las Vacas","Canyon + foto · 9 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/DSC_Barranco_de_las_Vacas.jpg/960px-DSC_Barranco_de_las_Vacas.jpg","Barranco de las Vacas, Gran Canaria",960,1440,"Hibiscus7 · Wikimedia Commons · CC BY-SA 4.0"],
+["Playa de Amadores","Bagno + relax · 9 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Playa_de_Amadores_in_Gran_Canaria_%2852758122868%29.jpg/1280px-Playa_de_Amadores_in_Gran_Canaria_%2852758122868%29.jpg","Playa de Amadores, Gran Canaria",1280,853,"dronepicr · Wikimedia Commons · CC BY 2.0"],
+["Roque Nublo","Cuore vulcanico · 10 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Roque_Nublo_in_Gran_Canaria_%2852758136013%29.jpg/1280px-Roque_Nublo_in_Gran_Canaria_%2852758136013%29.jpg","Roque Nublo, Gran Canaria",1280,853,"dronepicr · Wikimedia Commons · CC BY 2.0"],
+["Tejeda","Paese + montagne · 10 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Tejeda_-_Gran_Canaria.jpg/1280px-Tejeda_-_Gran_Canaria.jpg","Tejeda, Gran Canaria",1280,448,"H. Zell · Wikimedia Commons · CC BY-SA 3.0"],
+["Puerto de las Nieves","Porto + costa · 11 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Puerto_de_Las_Nieves_desde_Guayedra.jpg/1280px-Puerto_de_Las_Nieves_desde_Guayedra.jpg","Puerto de las Nieves, Gran Canaria",1280,577,"Wikimedia Commons"],
+["Mirador del Balcón","Vista sull'oceano · 11 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Mirador_de_Balc%C3%B3n_-_Gran_Canaria.JPG/960px-Mirador_de_Balc%C3%B3n_-_Gran_Canaria.JPG","Mirador del Balcón, Gran Canaria",960,1280,"H. Zell · Wikimedia Commons · CC BY-SA 3.0"],
+["Las Canteras","Spiaggia + tramonto · 11 SET","https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Las_Canteras_Beach_in_Las_Palmas%2C_Gran_Canaria_%2852757129762%29.jpg/1280px-Las_Canteras_Beach_in_Las_Palmas%2C_Gran_Canaria_%2852757129762%29.jpg","Playa de Las Canteras, Gran Canaria",1280,853,"dronepicr · Wikimedia Commons · CC BY 2.0"]
+];
 let currentDay=0,map=null,mapMarkers=[],mapLine=null,googleReady=false;
 function showSection(id,btn){document.querySelectorAll('.panel').forEach(p=>p.style.display='none');const el=document.getElementById(id);if(el)el.style.display='block';document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));const target=btn||document.querySelector('.nav button[data-section="'+id+'"]');if(target)target.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});if(id==='mappa'){setTimeout(initBaseMap,100);setTimeout(()=>{if(map){map.invalidateSize(true);updateBaseMap()}},450)}if(id==='logistica')renderLogistics();if(id==='meteo')loadWeather();}
 function mapsSearch(q){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q)}function mapsDir(origin,destination,waypoints=[]){let u='https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(origin)+'&destination='+encodeURIComponent(destination)+'&travelmode=driving';if(waypoints.length)u+='&waypoints='+waypoints.map(encodeURIComponent).join('%7C');return u}
 function renderMapDays(){
-const wrap=document.getElementById('mapDays');if(!wrap)return;wrap.innerHTML='';
-itinerary.forEach((d,i)=>{const b=document.createElement('button');b.type='button';b.className='mapDayBtn'+(i===currentDay?' active':'');
-b.innerHTML='<strong>'+d.date+'</strong><small>'+d.title.split(' · ')[0]+'</small>';
-b.onclick=()=>{currentDay=i;document.querySelectorAll('#mapDays .mapDayBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderDay(i);updateBaseMap()};
-wrap.appendChild(b)})}
+ const wrap=document.getElementById('mapDays');
+ if(!wrap)return;
+ wrap.innerHTML='';
+ itinerary.forEach((d,i)=>{
+   const b=document.createElement('button');
+   b.type='button';
+   b.className='mapDayBtn'+(i===currentDay?' active':'');
+   b.dataset.dayIndex=String(i);
+   b.innerHTML='<strong>'+d.date+'</strong><small>'+d.title.split(' · ')[0]+'</small>';
+   b.addEventListener('click',()=>selectMapDay(i));
+   wrap.appendChild(b);
+ });
+}
 
-function renderDays(){const wrap=document.getElementById('days');wrap.innerHTML='';itinerary.forEach((d,i)=>{const b=document.createElement('button');b.className='dayBtn'+(i===0?' active':'');b.innerHTML='<strong>'+d.date+'</strong><small>'+d.title.split(' · ')[0]+'</small>';b.onclick=()=>{currentDay=i;document.querySelectorAll('#days .dayBtn').forEach(x=>x.classList.remove('active'));document.querySelectorAll('#mapDays .mapDayBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');const mb=document.querySelectorAll('#mapDays .mapDayBtn')[i];if(mb)mb.classList.add('active');renderDay(i);updateBaseMap()};wrap.appendChild(b)});renderDay(0)}
+// Single source of truth for changing the day from the map selector.
+// This deliberately updates the day UI first, then refreshes the map on the
+// next animation frame so taps on Android cannot race the MapLibre render loop.
+function selectMapDay(i){
+ i=Number(i);
+ if(!Number.isInteger(i)||!itinerary[i])return;
+ currentDay=i;
+ document.querySelectorAll('#mapDays .mapDayBtn').forEach((x,j)=>x.classList.toggle('active',j===i));
+ document.querySelectorAll('#days .dayBtn').forEach((x,j)=>x.classList.toggle('active',j===i));
+ renderDay(i);
+ const refresh=()=>{
+   if(map){
+     try{map.resize();}catch(e){}
+     updateBaseMap();
+   }else{
+     initBaseMap();
+     setTimeout(()=>{if(map)updateBaseMap()},120);
+   }
+ };
+ requestAnimationFrame(refresh);
+}
+
+function renderDays(){const wrap=document.getElementById('days');wrap.innerHTML='';itinerary.forEach((d,i)=>{const b=document.createElement('button');b.className='dayBtn'+(i===0?' active':'');b.innerHTML='<strong>'+d.date+'</strong><small>'+d.title.split(' · ')[0]+'</small>';b.onclick=()=>{selectMapDay(i)};wrap.appendChild(b)});renderDay(0)}
 function renderDay(i){const d=itinerary[i],c=document.getElementById('dayContent');const priority=i===2||i===3||i===5||i===6?'<div class="priority"><b>⚠️ Attenzione</b><p>'+(['7 settembre: giornata lunga e dipendente dal dispositivo speciale Global.','8 settembre: giornata evento; prevedere attese per il rientro.','10 settembre: montagna, slot e condizioni da ricontrollare.','11 settembre: giornata più impegnativa al volante.'][[2,3,5,6].indexOf(i)])+'</p></div>':'';c.innerHTML='<div class="dayHero"><div class="dayIntro"><div class="kicker">'+d.date+' · giornata '+(i+1)+'</div><h3>'+d.title+'</h3><p>'+d.subtitle+'</p><div class="dayBadges"><span class="dayBadge">📍 '+d.stops.length+' operazioni</span><span class="dayBadge">🚗 auto</span><span class="dayBadge">🧭 Maps disponibile</span></div></div>'+priority+'</div>'+d.stops.map((s,j)=>'<div class="stop"><div class="time">'+s[0]+'</div><div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div><a class="btn secondary small" target="_blank" rel="noopener" href="'+mapsDir(j===0?d.origin:s[1],j<d.stops.length-1?d.stops[j+1][1]:d.destination)+'">↗ Maps</a></div>').join('')+'<div class="extraGrid"><div class="extraCard"><h4>🧭 Navigazione</h4><p>Per tempi reali, traffico e chiusure aprire sempre Google Maps/Waze al momento.</p></div><div class="extraCard"><h4>☀️ Ritmo</h4><p>Gli orari sono obiettivi. Se qualcosa slitta, proteggere le priorità della giornata.</p></div><div class="extraCard"><h4>📸 Ricordo</h4><p>Lasciare margine per foto e soste: il programma non deve diventare una corsa.</p></div></div>';document.getElementById('routeTitle').textContent=d.date+' · '+d.origin+' → '+d.destination;document.getElementById('openGoogleMap').href=mapsDir(d.origin,d.destination,d.waypoints)}
-function renderPlaces(){const html=quickPlaces.map(p=>'<div class="placeCard"><div class="placePhoto" style="background-image:url(\''+p[2]+'\')"></div><div class="placeBody"><h3>'+p[0]+'</h3><p>'+p[1]+'</p><a class="btn secondary small" target="_blank" rel="noopener" href="'+mapsSearch(p[3])+'">Apri Maps ↗</a></div></div>').join('');document.getElementById('quickPlaces').innerHTML=html;document.getElementById('allPlaces').innerHTML=html}
+function renderPlaces(){
+ const html=quickPlaces.map((p,i)=>`<article class="placeCard photoPlaceCard" tabindex="0" role="button" aria-label="Apri foto e dettagli di ${escapeHtml(p[0])}" onclick="openPlaceGallery(${i})" onkeydown="if(event.key==='Enter'||event.key===' ')openPlaceGallery(${i})"><div class="placePhoto" style="background-image:url('${p[2]}')"><span class="photoHint">⌕ Foto reale</span></div><div class="placeBody"><div class="placeEyebrow">${escapeHtml(p[5]||'')} ${escapeHtml(p[0])}</div><h3>${escapeHtml(p[0])}</h3><p>${escapeHtml(p[1])}</p><div class="placeActions"><span class="btn secondary small">Apri foto ↗</span><a class="btn secondary small" target="_blank" rel="noopener" href="${mapsSearch(p[3])}" onclick="event.stopPropagation()">Maps ↗</a></div></div></article>`).join('');
+ document.getElementById('quickPlaces').innerHTML=html;document.getElementById('allPlaces').innerHTML=html;
+}
 function renderChecks(){const car=['Fotografare carrozzeria, cerchi, pneumatici e vetri','Fotografare interni, cruscotto, chilometraggio e carburante','Controllare dotazioni e ricevuta carburante','Conservare voucher e contratto','In caso di danno: foto + personale Autounion + rapporto se necessario'];const trip=['Documenti: carta d’identità/passaporto e patente','Voucher auto e carta di credito fisica del conducente','Controllare orari/trasporto speciale Fiesta del Pino','Verificare slot/QR Roque Nublo prima del 10/09','Crema solare, cappellino, acqua e scarpe chiuse','Caricabatterie/power bank e adattatori necessari','Salvare offline indirizzo alloggio e documenti principali'];renderCheckList('carChecks',car,'gc26_checks');renderCheckList('tripChecks',trip,'gc26_trip_checks')}
 function renderCheckList(id,items,key){let saved={};try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){};document.getElementById(id).innerHTML=items.map((x,i)=>'<label class="check '+(saved[i]?'done':'')+'"><input type="checkbox" '+(saved[i]?'checked':'')+' onchange="toggleCheck(\''+key+'\','+i+',this)"><span>'+x+'</span></label>').join('')}
 function toggleCheck(key,i,el){let a={};try{a=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}a[i]=el.checked;localStorage.setItem(key,JSON.stringify(a));el.parentElement.classList.toggle('done',el.checked)}
 let mapRetry=0;
-function initBaseMap(){const fallback=document.getElementById('mapFallback');if(!window.L){setMapStatus('warn','Libreria mappa in caricamento');if(mapRetry<8){mapRetry++;setTimeout(initBaseMap,500)}else{fallback.style.display='grid';fallback.querySelector('h3').textContent='Mappa non caricata';fallback.querySelector('p').textContent='Tocca “Riprova” oppure usa Google Maps.';if(!document.getElementById('mapRetryBtn')){const b=document.createElement('button');b.id='mapRetryBtn';b.className='btn';b.textContent='Riprova';b.onclick=()=>{mapRetry=0;initBaseMap()};fallback.querySelector('.mini').appendChild(b)}}return}if(map){setTimeout(()=>{map.invalidateSize(true);updateBaseMap()},120);return}try{map=L.map('map',{zoomControl:true,scrollWheelZoom:false,preferCanvas:true,fadeAnimation:false}).setView([27.99,-15.62],9);const layers=[L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:19}),L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',maxZoom:20})];let active=layers[0];active.addTo(map);active.on('tileerror',()=>{if(active===layers[0]){try{map.removeLayer(active)}catch(e){}active=layers[1];active.addTo(map)}});fallback.style.display='none';setMapStatus('ok','Mappa interattiva');updateBaseMap();[120,400,900,1800].forEach(ms=>setTimeout(()=>{if(map)map.invalidateSize(true)},ms));if(window.ResizeObserver){new ResizeObserver(()=>{if(map)map.invalidateSize(false)}).observe(document.getElementById('map'))}}catch(e){console.error('Leaflet map error',e);setMapStatus('warn','Mappa non disponibile');fallback.style.display='grid';fallback.querySelector('h3').textContent='Mappa temporaneamente non disponibile';fallback.querySelector('p').textContent='Controlla la connessione e tocca Riprova. I pulsanti Google Maps restano disponibili.'}}
-function updateBaseMap(){if(!map)return;document.querySelectorAll('#mapDays .mapDayBtn').forEach((x,i)=>x.classList.toggle('active',i===currentDay));mapMarkers.forEach(m=>m.remove());mapMarkers=[];if(mapLine)mapLine.remove();const d=itinerary[currentDay],names=[d.origin,...d.waypoints,d.destination],points=names.map(n=>coords[n]).filter(Boolean);points.forEach((c,i)=>{const label=i===0?'Partenza':i===points.length-1?'Arrivo':'Tappa '+i;const m=L.marker(c).addTo(map).bindPopup('<b>'+label+'</b><br>'+escapeHtml(names[i]||'Tappa'));mapMarkers.push(m)});if(points.length>1)mapLine=L.polyline(points,{weight:4,opacity:.85}).addTo(map);if(points.length===1)map.setView(points[0],12);else if(points.length>1)map.fitBounds(L.latLngBounds(points),{padding:[40,40],maxZoom:12});document.getElementById('mapDayChip').textContent=d.date+' · '+d.title.split(' · ')[0];document.getElementById('routeStats').innerHTML='<span><strong>'+points.length+'</strong> punti</span><span>Tracciato schematico</span>'}
+let mapStyleFailed=false;
+let routeHalo=null;
+
+// Mappa volutamente semplice e stabile: Leaflet + OpenStreetMap + una
+// polilinea blu costruita direttamente dalle tappe del giorno selezionato.
+// Niente WebGL, niente MapLibre e niente servizi di routing esterni: così il
+// cambio giorno non può bloccarsi e il tracciato è sempre visibile.
+function initBaseMap(){
+  const fallback=document.getElementById('mapFallback');
+  if(!window.L){
+    setMapStatus('warn','Mappa in caricamento');
+    if(mapRetry<20){mapRetry++;setTimeout(initBaseMap,300);return;}
+    setMapStatus('warn','Mappa non disponibile');
+    return;
+  }
+  if(map){
+    setTimeout(()=>{try{map.invalidateSize(false);updateBaseMap()}catch(e){}},80);
+    return;
+  }
+  try{
+    map=L.map('map',{zoomControl:true,scrollWheelZoom:true,dragging:true,doubleClickZoom:true,touchZoom:true,boxZoom:false}).setView([27.99,-15.62],9);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      maxZoom:19,
+      attribution:'© OpenStreetMap contributors'
+    }).addTo(map);
+    fallback.style.display='none';
+    setMapStatus('ok','Mappa interattiva');
+    map.whenReady(()=>{map.invalidateSize(false);updateBaseMap()});
+    if(window.ResizeObserver)new ResizeObserver(()=>{try{map.invalidateSize(false)}catch(e){}}).observe(document.getElementById('map'));
+  }catch(e){
+    console.error('Leaflet map error',e);
+    setMapStatus('warn','Mappa non disponibile');
+    fallback.style.display='grid';
+  }
+}
+
+function makeMapMarker(label,index,total){
+  const cls=index===0?'start':index===total-1?'end':'stop';
+  const symbol=index===0?'↗':index===total-1?'★':String(index);
+  return L.divIcon({
+    className:'simpleMapMarker '+cls,
+    html:'<span class="markerCore">'+symbol+'</span><span class="markerLabel">'+escapeHtml(label)+'</span>',
+    iconSize:[1,1],iconAnchor:[0,0]
+  });
+}
+
+function updateBaseMap(){
+  if(!map||!window.L)return;
+  const d=itinerary[currentDay];
+  if(!d)return;
+  document.querySelectorAll('#mapDays .mapDayBtn').forEach((x,i)=>x.classList.toggle('active',i===currentDay));
+
+  // Remove only the objects belonging to the previous day.
+  mapMarkers.forEach(m=>{try{m.remove()}catch(e){}});
+  mapMarkers=[];
+  if(mapLine){try{mapLine.remove()}catch(e){}mapLine=null;}
+  if(routeHalo){try{routeHalo.remove()}catch(e){}routeHalo=null;}
+
+  const names=[d.origin,...(d.waypoints||[]),d.destination];
+  const entries=names.map(name=>({name,coord:coords[name]})).filter(x=>Array.isArray(x.coord));
+  const points=entries.map(x=>[x.coord[0],x.coord[1]]);
+
+  // Clean professional route: a soft white casing + solid blue line.
+  if(points.length>1){
+    routeHalo=L.polyline(points,{color:'#ffffff',weight:10,opacity:.94,lineCap:'round',lineJoin:'round',interactive:false}).addTo(map);
+    mapLine=L.polyline(points,{color:'#1677e8',weight:5,opacity:.98,lineCap:'round',lineJoin:'round',interactive:false}).addTo(map);
+  }
+
+  points.forEach((pt,i)=>{
+    const label=i===0?'Partenza':i===points.length-1?'Arrivo':'Tappa '+i;
+    const marker=L.marker(pt,{icon:makeMapMarker(label,i,points.length),zIndexOffset:500+i})
+      .addTo(map)
+      .bindPopup('<b>'+escapeHtml(label)+'</b><br>'+escapeHtml(entries[i].name));
+    mapMarkers.push(marker);
+  });
+
+  if(points.length===1){
+    map.setView(points[0],12,{animate:false});
+  }else if(points.length>1){
+    const bounds=L.latLngBounds(points);
+    map.fitBounds(bounds,{padding:[55,75],maxZoom:11,animate:false});
+  }
+
+  const chip=document.getElementById('mapDayChip');
+  if(chip)chip.textContent=d.date+' · '+d.title.split(' · ')[0];
+  const title=document.getElementById('routeTitle');
+  if(title)title.textContent=d.date+' · '+d.origin.split(',')[0]+' → '+d.destination.split(',')[0];
+  const stats=document.getElementById('routeStats');
+  if(stats)stats.innerHTML=points.length>1
+    ? '<span><strong>'+points.length+'</strong> punti</span><span style="color:#1677e8;font-weight:800">🔵 percorso della giornata</span>'
+    : '<span>Una sola posizione</span>';
+}
+
 function setMapStatus(type,text){document.getElementById('mapStatus').innerHTML='<i class="dot '+type+'"></i> '+text}
 function openGoogleForCurrent(){const d=itinerary[currentDay];window.open(mapsDir(d.origin,d.destination,d.waypoints),'_blank','noopener')}
-function openSettings(){document.getElementById('settingsModal').classList.add('show');document.getElementById('apiKeyInput').value=localStorage.getItem('gc26_maps_key')||'';updateApiHelp()}function closeSettings(){document.getElementById('settingsModal').classList.remove('show')}function clearApiKey(){localStorage.removeItem('gc26_maps_key');alert('Chiave Google rimossa da questo dispositivo.');closeSettings()}function saveApiKey(){const k=document.getElementById('apiKeyInput').value.trim();if(!k){alert('Inserisci una API key.');return}localStorage.setItem('gc26_maps_key',k);alert('Chiave salvata su questo dispositivo. Ricarico la pagina.');location.reload()}function updateApiHelp(){document.getElementById('apiHelp').innerHTML=location.protocol==='https:'?'✓ Pagina pubblicata via HTTPS. Ricorda di autorizzare questo dominio nella chiave Google.':'⚠️ Pubblica la dashboard su HTTPS per usare correttamente le restrizioni HTTP referrer.'}
+function openSettings(){document.getElementById('settingsModal').classList.add('show');document.body.classList.add('modal-open');document.getElementById('apiKeyInput').value=localStorage.getItem('gc26_maps_key')||'';updateApiHelp()}function closeSettings(){document.getElementById('settingsModal').classList.remove('show');document.body.classList.remove('modal-open')}function clearApiKey(){localStorage.removeItem('gc26_maps_key');alert('Chiave Google rimossa da questo dispositivo.');closeSettings()}function saveApiKey(){const k=document.getElementById('apiKeyInput').value.trim();if(!k){alert('Inserisci una API key.');return}localStorage.setItem('gc26_maps_key',k);alert('Chiave salvata su questo dispositivo. Ricarico la pagina.');location.reload()}function updateApiHelp(){document.getElementById('apiHelp').innerHTML=location.protocol==='https:'?'✓ Pagina pubblicata via HTTPS. Ricorda di autorizzare questo dominio nella chiave Google.':'⚠️ Pubblica la dashboard su HTTPS per usare correttamente le restrizioni HTTP referrer.'}
 function loadGoogleMaps(){const key=localStorage.getItem('gc26_maps_key');if(!key)return;const s=document.createElement('script');s.src='https://maps.googleapis.com/maps/api/js?key='+encodeURIComponent(key)+'&v=weekly&loading=async';s.async=true;s.defer=true;s.onload=()=>{googleReady=true;setMapStatus('ok','Google Maps collegata');};s.onerror=()=>setMapStatus('warn','Google Maps non caricata · mappa base attiva');document.head.appendChild(s)}
 async function searchPlaces(){if(!googleReady){alert('Collega Google Maps dal pulsante ⚙. La mappa base e i link Maps funzionano comunque.');return}const q=document.getElementById('placeQuery').value.trim();if(!q)return;const d=itinerary[currentDay];try{const {Place}=await google.maps.importLibrary('places');const fields=['displayName','location','formattedAddress','rating','userRatingCount','googleMapsURI'];const req={textQuery:q+' near '+d.destination,fields,maxResultCount:8,language:'it',region:'IT',locationBias:{center:{lat:coords[d.destination][0],lng:coords[d.destination][1]},radius:7000}};const type=document.getElementById('placeType').value;if(type){req.includedType=type;req.useStrictTypeFiltering=true}const {places}=await Place.searchByText(req);const box=document.getElementById('placeResults');if(!places.length){box.innerHTML='<div class="notice">Nessun risultato.</div>';return}box.innerHTML=places.map(p=>'<div class="result"><div class="resultThumb"></div><div><h3>'+escapeHtml(p.displayName||'Luogo')+'</h3><p>'+escapeHtml(p.formattedAddress||'Gran Canaria')+'<br>'+(p.rating?'⭐ '+p.rating.toFixed(1)+(p.userRatingCount?' · '+p.userRatingCount+' recensioni':''):'')+'</p></div><a class="btn secondary small" target="_blank" rel="noopener" href="'+(p.googleMapsURI||mapsSearch(p.displayName||'Gran Canaria'))+'">Apri ↗</a></div>').join('')}catch(e){console.error(e);document.getElementById('placeResults').innerHTML='<div class="notice danger">Places non disponibile. Controlla API abilitate e restrizioni della chiave.</div>'}}
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
@@ -164,9 +385,20 @@ const restaurants=[
  {day:'JOLLY',meal:'BASE · FLESSIBILE',name:'El Rinconcito Andaluz',place:'Playa del Inglés',desc:'Presente nel Libro d’Oro ma senza una data fissa nella guida revisionata. Perfetto come opzione vicino alla base.',map:'El Rinconcito Andaluz Playa del Ingles'},
  {day:'JOLLY',meal:'BASE · FLESSIBILE',name:'Bar San Fermín',place:'Playa del Inglés',desc:'Suggerimento del Libro d’Oro, senza assegnazione giornaliera nella guida revisionata. Da usare come alternativa flessibile.',map:'Bar San Fermin Playa del Ingles'}
 ];
+const guideRules=[
+ {icon:'🌿',title:'Meglio 3 che 7',text:'Se una giornata salta per stanchezza, traffico o meteo, non recuperare tutto la sera stessa.',note:'Proteggi le tappe principali e lascia cadere prima le attività opzionali.'},
+ {icon:'🚌',title:'Teror 7—8',text:"Usare il dispositivo speciale Global e non tentare l'accesso in auto al centro.",note:"La guida tratta il trasporto speciale come parte essenziale dell'organizzazione delle giornate della Fiesta del Pino."},
+ {icon:'🏔️',title:'Roque Nublo',text:'QR, slot, parcheggio e trasporto vanno verificati prima della visita.',note:'È una tappa regolamentata: meglio arrivare con tutto già controllato.'},
+ {icon:'🌊',title:'Costa ovest',text:'Per Mirador del Balcón seguire GC-2 e deviazione corretta.',note:'La guida raccomanda di seguire la viabilità aperta e non il vecchio tracciato chiuso.'},
+ {icon:'🥾',title:'Barranco',text:'Obiettivo 08:15. Poche piazzole: non parcheggiare sulla carreggiata.',note:'La priorità è arrivare presto senza trasformare la sosta in un problema di sicurezza.'},
+ {icon:'☀️',title:'Dune',text:'Tardo pomeriggio: luce più morbida e sabbia meno calda.',note:'È il momento scelto nel programma per vivere le dune con un ritmo più piacevole.'}
+];
+function renderGuide(){const box=document.getElementById('guideGrid');if(!box)return;box.innerHTML=guideRules.map((g,i)=>`<button type="button" class="guideItem" onclick="openGuideModal(${i})"><div><h3>${g.icon} ${escapeHtml(g.title)}</h3><p>${escapeHtml(g.text)}</p></div><span class="guideHint">Tocca per approfondire <span>→</span></span></button>`).join('')}
+function openGuideModal(i){const g=guideRules[i];if(!g)return;document.getElementById('guideModalTitle').textContent=g.icon+' '+g.title;document.getElementById('guideModalBody').innerHTML=`<div class="guideModalLead">${escapeHtml(g.text)}</div><div class="guideModalNote">${escapeHtml(g.note)}</div>`;document.getElementById('guideModal').classList.add('show');document.body.classList.add('modal-open')}
+function closeGuideModal(){document.getElementById('guideModal').classList.remove('show');document.body.classList.remove('modal-open')}
 function renderFood(){const box=document.getElementById('foodGrid');if(!box)return;box.innerHTML=foods.map((f,i)=>`<button type="button" class="foodCard clickable" onclick="openFoodModal(${i})"><div class="foodIcon">${f.icon}</div><h3>${escapeHtml(f.name)}</h3><p>${escapeHtml(f.what)}</p><span class="foodTag">${escapeHtml(f.tag)}</span></button>`).join('');const rg=document.getElementById('restaurantGrid');if(rg)rg.innerHTML=restaurants.map(r=>`<div class="dayRestaurantRow"><div class="when">${escapeHtml(r.day)}<br>${escapeHtml(r.meal)}</div><div><h4>${escapeHtml(r.name)}</h4><p><b>${escapeHtml(r.place)}</b> · ${escapeHtml(r.desc)}</p></div><a class="btn secondary small" target="_blank" rel="noopener" href="${mapsSearch(r.map)}">Maps ↗</a></div>`).join('')}
-function openFoodModal(i){const f=foods[i],box=document.getElementById('foodDetail');box.innerHTML=`<div class="foodDetailHero"><div class="bigIcon">${f.icon}</div><div><div class="kicker">${escapeHtml(f.tag)}</div><h3>${escapeHtml(f.name)}</h3><div class="smallText">${escapeHtml(f.day)}</div></div></div><p><b>Cos’è:</b> ${escapeHtml(f.what)}</p><p><b>Dove inserirlo nel vostro viaggio:</b> ${escapeHtml(f.where)}</p><div class="btnRow"><a class="btn" target="_blank" rel="noopener" href="${mapsSearch(f.maps)}">📍 Cerca su Google Maps</a><button class="btn secondary" onclick="closeFoodModal()">Chiudi</button></div><div class="sourceNote">Se una specialità non è disponibile quel giorno, non vale la pena stravolgere l’itinerario: scegliete l’alternativa locale più vicina.</div>`;document.getElementById('foodModal').classList.add('show')}
-function closeFoodModal(){document.getElementById('foodModal').classList.remove('show')}
+function openFoodModal(i){const f=foods[i],box=document.getElementById('foodDetail');document.body.classList.add('modal-open');box.innerHTML=`<div class="foodDetailHero"><div class="bigIcon">${f.icon}</div><div><div class="kicker">${escapeHtml(f.tag)}</div><h3>${escapeHtml(f.name)}</h3><div class="smallText">${escapeHtml(f.day)}</div></div></div><p><b>Cos’è:</b> ${escapeHtml(f.what)}</p><p><b>Dove inserirlo nel vostro viaggio:</b> ${escapeHtml(f.where)}</p><div class="btnRow"><a class="btn" target="_blank" rel="noopener" href="${mapsSearch(f.maps)}">📍 Cerca su Google Maps</a><button class="btn secondary" onclick="closeFoodModal()">Chiudi</button></div><div class="sourceNote">Se una specialità non è disponibile quel giorno, non vale la pena stravolgere l’itinerario: scegliete l’alternativa locale più vicina.</div>`;document.getElementById('foodModal').classList.add('show')}
+function closeFoodModal(){document.getElementById('foodModal').classList.remove('show');document.body.classList.remove('modal-open')}
 const logDays=[
  ['5 SET','San Giorgio a Liri → Fiumicino → LPA','Partenza prudenziale 01:45—02:00 · arrivo parcheggio entro 04:00 · shuttle FCO · volo · ritiro Autounion alle 10:00 · Playa del Inglés.','https://www.google.com/maps/dir/?api=1&origin=San%20Giorgio%20a%20Liri%2C%20FR%2C%20Italia&destination=Via%20delle%20Pinne%2074%2C%2000054%20Fiumicino%20RM%2C%20Italia&travelmode=driving'],
  ['6 SET','Playa del Inglés → Anfi → Puerto de Mogán','Auto · giornata mare. Nessuna logistica speciale: partire 08:30, Anfi al mattino, Puerto de Mogán nel pomeriggio, rientro in serata.',mapsDir('Playa del Inglés, Gran Canaria','Puerto de Mogán, Gran Canaria',['Anfi del Mar, Gran Canaria'])],
@@ -180,6 +412,88 @@ const logDays=[
 function renderLogistics(){const d=document.getElementById('logDays'),c=document.getElementById('logContent');if(!d||!c)return;d.innerHTML=logDays.map((x,i)=>`<button class="dayBtn ${i===currentDay?'active':''}" onclick="selectLogDay(${i})"><strong>${x[0]}</strong><small>${x[1].split(' → ')[0]}</small></button>`).join('');selectLogDay(currentDay)}
 function selectLogDay(i){currentDay=i;document.querySelectorAll('#logDays .dayBtn').forEach((b,j)=>b.classList.toggle('active',j===i));const x=logDays[i];document.getElementById('logTitle').textContent=x[0]+' · '+x[1];document.getElementById('logContent').innerHTML=`<div class="logDay"><strong>🧭 Piano operativo</strong><small>${escapeHtml(x[2])}</small><a class="btn secondary small" target="_blank" rel="noopener" href="${x[3]}">Apri Maps ↗</a></div>`}
 document.getElementById('routeBtn').addEventListener('click',openGoogleForCurrent);document.getElementById('placeSearchBtn').addEventListener('click',searchPlaces);document.getElementById('placeQuery').addEventListener('keydown',e=>{if(e.key==='Enter')searchPlaces()});document.getElementById('settingsBtn').addEventListener('click',openSettings);document.getElementById('shareBtn').addEventListener('click',async()=>{if(navigator.share){try{await navigator.share({title:'Gran Canaria 2026',text:'La nostra dashboard di viaggio a Gran Canaria.',url:location.href})}catch(e){}}else{try{await navigator.clipboard.writeText(location.href);alert('Link copiato.')}catch(e){alert('Copia manualmente l’indirizzo della pagina.')}}});
-renderDays();renderMapDays();renderPlaces();renderChecks();renderFood();renderLogistics();updateApiHelp();loadGoogleMaps();updateCountdown();setInterval(updateCountdown,60000);
+renderDays();renderMapDays();renderPlaces();renderChecks();renderFood();renderGuide();renderLogistics();updateApiHelp();loadGoogleMaps();updateCountdown();setInterval(updateCountdown,60000);
+
+/* ===== PREMIUM INTERACTION ENGINE ===== */
+(function(){
+  const reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const progress=document.getElementById('wowProgress');
+  const updateProgress=()=>{
+    if(!progress)return;
+    const max=document.documentElement.scrollHeight-window.innerHeight;
+    progress.style.width=(max>0?(window.scrollY/max)*100:0)+'%';
+  };
+  window.addEventListener('scroll',updateProgress,{passive:true});
+  updateProgress();
+  if(reduce)return;
+
+  if(window.Lenis){
+    const lenis=new Lenis({autoRaf:true,duration:1.0,smoothWheel:true,syncTouch:false,gestureOrientation:'vertical'});
+    window.gcLenis=lenis;
+  }
+
+  if(window.gsap && window.ScrollTrigger){
+    gsap.registerPlugin(ScrollTrigger);
+    const hero=gsap.timeline({defaults:{ease:'power4.out'}});
+    hero.from('.hero .eyebrow',{y:24,opacity:0,duration:.7,delay:.12})
+        .from('.hero h1',{y:42,opacity:0,duration:1.05},'-=.45')
+        .from('.hero .heroSub',{y:22,opacity:0,duration:.75},'-=.55')
+        .from('.hero .heroMeta .pill',{y:16,opacity:0,stagger:.07,duration:.45},'-=.45')
+        .from('.wowBar',{y:28,opacity:0,duration:.7},'-=.25');
+
+    gsap.to('.hero',{backgroundPosition:'50% 62%',ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.3}});
+    gsap.to('.hero:after',{opacity:.35,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.2}});
+
+    gsap.utils.toArray('.section.card,.section.grid,.panel > .card,.panel > .grid').forEach((el,i)=>{
+      gsap.fromTo(el,{y:30,opacity:0},{y:0,opacity:1,duration:.72,delay:(i%3)*.035,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+    });
+
+    gsap.utils.toArray('.wowMetric').forEach((el,i)=>gsap.fromTo(el,{y:14,opacity:0},{y:0,opacity:1,duration:.55,delay:i*.05,ease:'power3.out',scrollTrigger:{trigger:'.wowBar',start:'top 88%',once:true}}));
+
+    // Subtle card tilt only where it helps; disabled on touch devices.
+    if(window.matchMedia('(hover:hover)').matches){
+      document.querySelectorAll('.quickLink,.guideItem,.placeCard,.foodCard').forEach(card=>{
+        card.addEventListener('pointermove',e=>{
+          const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+          card.style.transform=`perspective(700px) rotateX(${(-y*2.5).toFixed(2)}deg) rotateY(${(x*2.5).toFixed(2)}deg) translateY(-4px)`;
+        });
+        card.addEventListener('pointerleave',()=>card.style.transform='');
+      });
+    }
+    ScrollTrigger.refresh();
+  }
+
+  let lastY=window.scrollY;
+  window.addEventListener('scroll',()=>{
+    const y=window.scrollY,nav=document.querySelector('.nav');
+    if(!nav)return;
+    if(y>lastY+8 && y>180)nav.classList.add('nav-hidden');
+    else if(y<lastY-8)nav.classList.remove('nav-hidden');
+    lastY=y;
+  },{passive:true});
+})();
+
+// Percorso volutamente schematico e locale: nessun routing esterno.
+// Close any modal with Escape; keep the bottom navigation out of the way while a sheet is open.
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeGuideModal();if(typeof closeFoodModal==='function')closeFoodModal();closeSettings()}});
+
+// PhotoSwipe lightbox for destination images
+
+window.openPlaceGallery=function(index){
+ const p=quickPlaces[index];
+ const items=quickPlaces.map(x=>({src:x[2],width:x[4]||1280,height:x[5]||800,alt:x[0]+' — '+x[1]}));
+ if(!window.PhotoSwipeLightbox){setTimeout(()=>window.openPlaceGallery(index),150);return;}
+ const lb=new window.PhotoSwipeLightbox({dataSource:items,pswpModule:()=>import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),bgOpacity:.96,wheelToZoom:true,showHideAnimationType:'zoom'});
+ lb.addFilter('itemData',(itemData,filterName)=>itemData);
+ lb.on('uiRegister',()=>{
+   lb.pswp.ui.registerElement({name:'placeCaption',order:9,isButton:false,appendTo:'root',html:'',onInit:(el)=>{
+     el.className='placeCaption';
+     el.innerHTML=`<div class="placeCaptionName">${escapeHtml(p[0])}</div><div class="placeCaptionSub">${escapeHtml(p[1])}</div><div class="placeCaptionCredit">${escapeHtml(p[6]||'Foto: Wikimedia Commons')}</div>`;
+   }});
+ });
+ lb.init();lb.loadAndOpen(index);
+};
+
+
 </script>
 </body></html>
